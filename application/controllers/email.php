@@ -22,20 +22,49 @@ Class Email extends CI_Controller{
 		$this->load->library(array('email'));
 	}//Fin construct()
 
+	function index(){
+		/*$this->load->library('email');
+
+		//Se definen los parametros de configuracion
+        $config['protocol'] = 'IMAP';
+        $config['smtp_host'] = 'mail.empleosystemthree.org';
+        $config['smtp_timeout'] = '10';
+        $config['wordwrap'] = true;
+        $config['smtp_user'] = 'info';
+        $config['smtp_pass'] = '1nf0rm4c1on';
+        $config['mailtype'] = 'html';
+
+        //Se inicializa la configuración
+        $this->email->initialize($config);
+
+
+		$this->email->from('info@empleosystemthree.org', 'Your Name');
+		$this->email->to('johnarleycano@hotmail.com'); 
+		// $this->email->cc('another@another-example.com'); 
+		// $this->email->bcc('them@their-example.com'); 
+
+		$this->email->subject('Email Test');
+		$this->email->message('Testing the email class.');	
+
+		$this->email->send();
+
+		echo $this->email->print_debugger();*/
+	}
+
 	function enviar(){
-		//Se recibe el destinatario y dato adicional
-		$destinatario = $this->input->post('destinatario');
-
-		//Suiche
+		// Se reciben los datos
+		$datos = $this->input->post('datos');
+		
+		// suiche
 		switch ($this->input->post('tipo')) {
-			case "bienvenido":
-				$texto = "<h3>Estimado <b>".$this->input->post('nombre').":</b></h3><br>Le damos la bienvenida al programa. Desde ahora cuenta con un código de empleo para ingresar a la aplicación y participar.<br><br>Su código de empleo es el ".$this->input->post('codigo_empleo').". Su clave es ".$this->input->post('password').".<br>Por favor no olvide sus datos y nunca le entregue su clave a otra persona.";
 
-				// $this->email_model->enviar_info($destinatario, "Bienvenido", $texto);
-				echo $this->email_model->enviar_info("johnarleycano@hotmail.com", "Prueba", "Envío de prueba");
+			case "bienvenido":
+				$texto = "<h3>Estimado <b>".$datos['nombre'].":</b></h3><br>Le damos la bienvenida al programa. Desde ahora cuenta con un código de afiliación para ingresar a la aplicación y participar.<br><br>Su código es ".$datos['codigo_afiliacion'].". Su clave es ".$datos['password'].".<br>Por favor no olvide sus datos y nunca le entregue su clave a otra persona.";
+
+				echo $this->email_model->enviar_info($datos['destinatario'], "Bienvenido", $texto);
 				break;
-			
-			/*case "2":
+			/*
+			case "2":
 				$this->email_model->enviar($destinatario, "Está autorizado", "Bienvenido. Ahora usted está autorizado y puede seguir. ".$dato."Cualquier inquietud llámenos");
 				break;
 
@@ -56,10 +85,6 @@ Class Email extends CI_Controller{
 				break;*/
 		} // suiche
 	}//Fin enviar
-
-	function prueba(){
-		$this->email_model->enviar("johnarleycano@hotmail.com", "Prueba", "Envío de prueba");
-	}
 }
 /* Fin del archivo email.php */
 /* Ubicación: ./application/controllers/email.php */

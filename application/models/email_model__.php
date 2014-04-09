@@ -34,7 +34,7 @@ Class Email_model extends CI_Model{
         $this->email->from($correo_sistema, $this->nombre);
         $this->email->to($destinatario); 
         //$this->email->cc(''); 
-        //$this->email->bcc(array('johnarleycano@hotmail.com')); 
+        $this->email->bcc(array('johnarleycano@hotmail.com')); 
         $this->email->subject($asunto);
 
         //Se organiza la plantilla
@@ -44,14 +44,8 @@ Class Email_model extends CI_Model{
         //Se deja OK el mensaje
         $this->email->message($mensaje);
         
-        //Si se envia
-        if ($this->email->send()) {
-             return "true";
-         }else{
-            return "false";
-         } // if
-
-        // $this->email->print_debugger();
+        //Se envia
+        $this->email->send();
     }
 
     function enviar_denuncia($destinatario, $asunto, $cuerpo){

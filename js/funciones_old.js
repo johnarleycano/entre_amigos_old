@@ -1,4 +1,4 @@
-var base_url = "http://localhost/proyectos/fundacion/index.php/";
+var base_url = "http://localhost:88/proyectos/fundacion/index.php/";
 
 function mostrar(elemento){
 	$("#" + elemento).slideDown("slow");

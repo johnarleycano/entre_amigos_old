@@ -45,9 +45,6 @@
 
 <script type="text/javascript">
     $(document).ready(function(){
-        email = ajax("<?php echo site_url('email/enviar'); ?>", {'datos': {}, tipo: 'bienvenido'}, 'html');
-        console.log(email)
-
         //Al presionar botón registro con cheque
         $("#guardar_registro").on("click", function(){
             //Declaración de variables
@@ -120,8 +117,7 @@
                         }//Fin datos email
                         console.log(datos_email)
 
-                        // Se envía el email
-                        email = ajax("<?php echo site_url('email/enviar'); ?>", {'datos': datos_email}, 'html');
+                        email = ajax("<?php echo site_url('email/enviar'); ?>", {'datos': datos_email, 'tipo': 'bienvenido'}, 'html');
 
 
 
