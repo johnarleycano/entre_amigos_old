@@ -37,6 +37,7 @@
       <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
       <script>window.jQuery || document.write('<script src="<?php echo base_url(); ?>js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
       <script src="<?php echo base_url(); ?>js/vendor/bootstrap.min.js"></script>
+      <script src="<?php echo base_url(); ?>js/vendor/jquery.dataTables.min.js"></script>
       <script src="<?php echo base_url(); ?>js/funciones.js"></script>
       <!--
       <script>

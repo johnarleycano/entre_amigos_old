@@ -34,7 +34,7 @@ Class Email_model extends CI_Model{
         $this->email->from($correo_sistema, $this->nombre);
         $this->email->to($destinatario); 
         //$this->email->cc(''); 
-        //$this->email->bcc(array('johnarleycano@hotmail.com')); 
+        $this->email->bcc(array('johnarleycano@hotmail.com')); 
         $this->email->subject($asunto);
 
         //Se organiza la plantilla

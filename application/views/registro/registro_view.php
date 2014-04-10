@@ -45,6 +45,11 @@
 
 <script type="text/javascript">
     $(document).ready(function(){
+        // Inicialización de la tabla
+        $('#tabla').dataTable( {
+            "bProcessing": true,
+        }); // Tabla
+
         //Al presionar botón registro con cheque
         $("#guardar_registro").on("click", function(){
             //Declaración de variables
@@ -117,11 +122,11 @@
                         }//Fin datos email
                         console.log(datos_email)
 
+                        //Se envía el correo electrónico de bienvenida
                         email = ajax("<?php echo site_url('email/enviar'); ?>", {'datos': datos_email, 'tipo': 'bienvenido'}, 'html');
 
-
-
-
+                        //Se muestra el mensaje de exito
+                        mostrar_exito($("#mensajes"), "¡Se ha creado su registro correctamente! Le hemos enviado a su correo electrónico el código de afiliación y la contraseña con la que ingresará a partir de ahora. <h1>Su código de afiliación es " + codigo_afiliacion + "</h1>");
                     }// if usuario guardado
                 } // if codigo de afiliación
             } // if campos vacíos
