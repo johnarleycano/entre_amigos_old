@@ -12,6 +12,7 @@
 
 <div class="navbar-collapse collapse">
 	<ul class="nav navbar-nav">
-		<li><a href="<?php echo site_url('registro'); ?>"><span class="glyphicon glyphicon-hand-up"></span> Registro</a></li>
+		<li><a href="<?php echo site_url('usuario/afiliados'); ?>"><span class="glyphicon glyphicon-user"></span> Usuarios</a></li>
+		<li><a href="<?php echo site_url('registro'); ?>"><span class="glyphicon glyphicon-hand-up"></span> Afiliarse</a></li>
 	</ul>
 </div><!--/.navbar-collapse -->

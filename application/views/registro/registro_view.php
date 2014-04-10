@@ -88,7 +88,7 @@
                 //Si no se generó el código
                 if (codigo_afiliacion == 'false') {
                     //Mensaje de error
-                    mostrar_error($("#mensajes"), "No se ha podido guardar su registro. Intente nuevamente por favor.");
+                    mostrar_error($("#mensajes"), "No se ha podido guardar su afiliación. Intente nuevamente por favor.");
 
                     // Se detiene el formulario
                     return false;
@@ -126,7 +126,7 @@
                         email = ajax("<?php echo site_url('email/enviar'); ?>", {'datos': datos_email, 'tipo': 'bienvenido'}, 'html');
 
                         //Se muestra el mensaje de exito
-                        mostrar_exito($("#mensajes"), "¡Se ha creado su registro correctamente! Le hemos enviado a su correo electrónico el código de afiliación y la contraseña con la que ingresará a partir de ahora. <h1>Su código de afiliación es " + codigo_afiliacion + "</h1>");
+                        mostrar_exito($("#mensajes"), "¡Se ha afiliado correctamente! Le hemos enviado a su correo electrónico el código de afiliación y la contraseña con la que ingresará a partir de ahora. <h1>Su código de afiliación es " + codigo_afiliacion + "</h1>");
                     }// if usuario guardado
                 } // if codigo de afiliación
             } // if campos vacíos

@@ -20,6 +20,22 @@ Class Registro_model extends CI_Model{
 			return 'false';
 		}
 	}
+
+	function validar_codigo_empleo($codigo){
+		//Se consulta el código
+		$this->db->where('Codigo_Empleo', $codigo);
+
+		$resultado = $this->db->get('tbl_usuarios')->row();
+
+		//Si existe
+		if (count($resultado) == 1) {
+			//Retorna true
+			return 'true';
+		} else {
+			//Retorna tfalse
+			return 'false';
+		}
+	} // validar_codigo_empleo
 	
 	function generar_codigo_afiliacion(){
 		//Se crea un código
@@ -31,7 +47,19 @@ Class Registro_model extends CI_Model{
 		} else {
 			return $codigo;
 		}
-	}
+	} // generar_codigo_afiliacion
+
+	function generar_codigo_empleo(){
+		//Se crea un código
+		$codigo = str_pad(rand(1, 999999), 6, 0, STR_PAD_LEFT)."CE";
+
+		//Si el código ya existe
+		if($this->validar_codigo_empleo($codigo) == "true"){
+			return "false";
+		} else {
+			return $codigo;
+		}
+	} // generar_codigo_empleo
 
 	function guardar($tipo, $datos){
 		switch ($tipo) {
@@ -63,7 +91,7 @@ Class Registro_model extends CI_Model{
 				break;*/
 		}
 		
-	}
+	} // guardar
 }	
 /* Fin del archivo registro_model.php */
 /* Ubicación: ./application/models/registro_model.php */

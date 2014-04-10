@@ -46,6 +46,17 @@ Class Registro extends CI_Controller{
         }
 	}
 
+    function generar_codigo_empleo(){
+        //Se valida que la peticion venga mediante ajax y no mediante el navegador
+        if($this->input->is_ajax_request()){
+            //Se genera un código de afiliación y cheques
+            echo $this->registro_model->generar_codigo_empleo();
+        }else{
+            //Si la peticion fue hecha mediante navegador, se redirecciona a la pagina de inicio
+            redirect('');
+        }
+    }
+
 	function guardar(){
 		//Se valida que la peticion venga mediante ajax y no mediante el navegador
         if($this->input->is_ajax_request()){
