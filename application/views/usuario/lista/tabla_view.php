@@ -33,7 +33,7 @@
                 <td><?php echo $usuario->Telefono; ?></td>
                 <td><?php echo $usuario->Direccion; ?></td>
                 <td>
-                    <?php if($usuario->Codigo_Empleo){ ?>
+                    <?php if($usuario->Codigo_Empleo != "Pendiente"){ ?>
                         <!-- Afiliar -->
                         <a href="javascript:desafiliar('<?php echo $usuario->Pk_Id_Usuario; ?>')">
                             <span class="glyphicon glyphicon-import" title="Quitar autorización"></span>

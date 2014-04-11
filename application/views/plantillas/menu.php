@@ -16,6 +16,7 @@
 	<ul class="nav navbar-nav">
 		<!-- Si es administrador, puede ver los afiliados -->
 		<?php if($this->session->userdata('Tipo') == '1'){ ?>
+			<!-- Listado de usuarios -->
 			<li><a href="<?php echo site_url('usuario/afiliados'); ?>"><span class="glyphicon glyphicon-user"></span> Usuarios</a></li>
 		<?php } ?>
 
@@ -23,7 +24,11 @@
 
 		<!-- Si se ha logueado -->
 		<?php if($id_usuario){ ?>
-			<li><a href="<?php echo site_url('usuario/finalizar') ?>"><span class="glyphicon glyphicon-user"></span> <?php echo substr($this->session->userdata('Nombre'), 0, 25); ?> - Cerrar sesión</a></li>
+			<!-- Invitar un amigo -->
+			<li><a href="<?php echo site_url('usuario/invitaciones'); ?>"><span class="glyphicon glyphicon-user"></span> Mis invitaciones</a></li>
+
+			<!-- Cerrar Sesión -->
+			<li><a href="<?php echo site_url('usuario/finalizar') ?>"><span class="glyphicon glyphicon-remove"></span> Cerrar sesión (<?php echo substr($this->session->userdata('Nombre'), 0, 15); ?>)</a></li>
 		<?php } ?>
 
 	</ul><!-- Opciones del menú -->
@@ -69,7 +74,7 @@
 				 
 				// Se valida que exista el usuario
 				existe_usuario = ajax("<?php echo site_url('usuario/validar'); ?>", {'datos': datos_sesion}, 'HTML');
-console.log(existe_usuario)
+
 				//Si el usuario se encuentra
 				if (existe_usuario != "false") {
 					//Redirección

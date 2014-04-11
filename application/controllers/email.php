@@ -71,6 +71,13 @@ Class Email extends CI_Controller{
 				//Se envía el email
 				$this->email_model->enviar_info($datos['destinatario'], "Ha sido Autorizado", $texto);
 				break;
+
+			case "desautorizacion":
+				$texto = "<h3><b>Estimado:</b></h3><br>usted estaba autorizado en la fundación y ha sido desautorizado en este momento.";
+
+				//Se envía el email
+				$this->email_model->enviar_info($datos['destinatario'], "Ya no está autorizado", $texto);
+				break;
 			/*
 			case "2":
 				$this->email_model->enviar($destinatario, "Está autorizado", "Bienvenido. Ahora usted está autorizado y puede seguir. ".$dato."Cualquier inquietud llámenos");

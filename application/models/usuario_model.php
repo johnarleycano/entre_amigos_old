@@ -31,12 +31,14 @@ Class Usuario_model extends CI_Model{
 		switch ($tipo) {
 			//Cuando son afiliados
 			case 'afiliados':
-				$this->db->where('Codigo_Empleo IS NOT NULL', null, false);
+				$this->db->where('Codigo_Empleo <> "Pendiente"', null, false);
+				// $this->db->where('Codigo_Empleo', 'null');
 				break;
 
 			//Cuando no se han afiliado aun
 			case 'pendientes':
-				$this->db->where('Codigo_Empleo IS NULL', null, false);
+				$this->db->where('Codigo_Empleo', 'Pendiente');
+				// $this->db->where('Codigo_Empleo IS NULL', null, false);
 				break;			
 		} // suiche
 		

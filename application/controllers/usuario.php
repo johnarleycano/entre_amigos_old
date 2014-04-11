@@ -25,7 +25,18 @@ Class Usuario extends CI_Controller{
 		//Se establece el título de la página
 		$this->data['titulo'] = 'Afiliados';
 		//Se establece la vista que tiene el contenido principal
-        $this->data['contenido_principal'] = 'usuario/index_view';
+        $this->data['contenido_principal'] = 'usuario/lista/index_view';
+        //Se establece la vista que tiene la cabecera
+        $this->data['cabecera'] = 'usuario/usuario_cabecera';
+        //Se carga la plantilla con las demas variables
+        $this->load->view('plantillas/template', $this->data);
+	}
+
+	function invitaciones(){
+		//Se establece el título de la página
+		$this->data['titulo'] = 'Invitaciones';
+		//Se establece la vista que tiene el contenido principal
+        $this->data['contenido_principal'] = 'usuario/invitaciones/index_view';
         //Se establece la vista que tiene la cabecera
         $this->data['cabecera'] = 'usuario/usuario_cabecera';
         //Se carga la plantilla con las demas variables
@@ -50,7 +61,7 @@ Class Usuario extends CI_Controller{
 			$this->data['usuarios'] = $this->usuario_model->listar($this->input->post('tipo'));
 			
 			//Se carga la interfaz
-			$this->load->view('usuario/lista_view', $this->data);
+			$this->load->view('usuario/lista/tabla_view', $this->data);
         }else{
             //Si la peticion fue hecha mediante navegador, se redirecciona a la pagina de inicio
             redirect('');
@@ -98,7 +109,7 @@ Class Usuario extends CI_Controller{
 	 				"Nombre" => $validacion->Nombre,
 	 				"Email" => $validacion->Email,
 	 				"Tipo" => $validacion->Tipo
- 				);
+ 				); // sesion
 
 				//Se cargan los datos a la sesión
                 $this->session->set_userdata($sesion);
@@ -112,8 +123,8 @@ Class Usuario extends CI_Controller{
         }else{
             //Si la peticion fue hecha mediante navegador, se redirecciona a la pagina de inicio
             redirect('');
-        }
-	}
+        } // if
+	} //validar
 }
 /* Fin del archivo usuario.php */
 /* Ubicación: ./application/controllers/usuario.php */
