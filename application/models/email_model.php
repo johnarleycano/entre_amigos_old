@@ -44,12 +44,12 @@ Class Email_model extends CI_Model{
         //Se deja OK el mensaje
         $this->email->message($mensaje);
         
-        //Si se envia
+        /*//Si se envia
         if ($this->email->send()) {
              return "true";
          }else{
             return "false";
-         } // if
+         } // if*/
 
         // $this->email->print_debugger();
     }
@@ -87,7 +87,7 @@ Class Email_model extends CI_Model{
         $this->email->message($mensaje);
         
         //Se envia
-        $this->email->send();
+        // $this->email->send();
     }
 }
 /* Fin del archivo email_model.php */

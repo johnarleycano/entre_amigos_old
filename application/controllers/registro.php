@@ -60,8 +60,14 @@ Class Registro extends CI_Controller{
 	function guardar(){
 		//Se valida que la peticion venga mediante ajax y no mediante el navegador
         if($this->input->is_ajax_request()){
+            // Se reciben los datos por post
+            $datos = $this->input->post('datos');
+            
+            // Antes de enviar se encripta la clave
+            $datos['Password'] = md5($datos['Password']);
+
             //Si se guarda correctamente
-    		if($this->registro_model->guardar("registro", $this->input->post('datos')) == 'true'){
+    		if($this->registro_model->guardar("registro", $datos) == 'true'){
     			//Se retorna el id del usuario creado
     			echo mysql_insert_id();
     		} else {

@@ -73,6 +73,11 @@ function mostrar_exito(campo, mensaje){
     campo.html('<div class="alert alert-success">' + mensaje+ '</div>').show('slow');
 }
 
+function mostrar_info(campo, mensaje){
+    //Mensaje a mostrar
+    campo.html('<div class="alert alert-info">' + mensaje+ '</div>').show('slow');
+}
+
 function guardar_formulario(url, datos){
     //Variable de exito
     var exito = false;
@@ -150,31 +155,3 @@ function buscar_codigo_empleo(codigo_empleo){
         }//Fin success
     });//Fin Ajax
 }
-
-function autorizar(){
-    //Petición AJAX
-    $.ajax({
-        url: base_url + "autorizacion/autorizar",
-        type: "POST",
-        data: {codigo_empleo: $("#codigo").val()},
-        success: function (respuesta) {
-            if(respuesta == "padre"){
-                //Muestra el mensaje de exito
-                mostrar_exito($("#buscar_codigo"), "¡Ha realizado la autorización correctamente y ha quedado registrado como padre!");
-
-                //Envía el correo electrónico diciendo que ya está autorizado
-                
-            } else if(respuesta == "abuelo"){
-                //Muestra el mensaje de exito
-                mostrar_exito($("#buscar_codigo"), "¡Ha realizado la autorización correctamente y ha quedado registrado como abuelo!");
-            }else if(respuesta == "false"){
-                //Muestra el mensaje de error
-                mostrar_error($("#buscar_codigo"), "¡Este usuario ya tiene padre y abuelo o ya lo autorizaste!");
-
-                //Envía el correo electrónico diciendo que ya está autorizado
-                
-            }
-        }//Fin success
-    });//Fin ajax
-}
-

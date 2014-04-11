@@ -61,7 +61,15 @@ Class Email extends CI_Controller{
 			case "bienvenido":
 				$texto = "<h3>Estimado <b>".$datos['nombre'].":</b></h3><br>Le damos la bienvenida al programa. Desde ahora cuenta con un código de afiliación para ingresar a la aplicación y participar.<br><br>Su código es ".$datos['codigo_afiliacion'].". Su clave es ".$datos['password'].".<br>Por favor no olvide sus datos y nunca le entregue su clave a otra persona.";
 
-				echo $this->email_model->enviar_info($datos['destinatario'], "Bienvenido", $texto);
+				//Se envía el email
+				$this->email_model->enviar_info($datos['destinatario'], "Bienvenido", $texto);
+				break;
+
+			case "autorizacion":
+				$texto = "<h3><b>Estimado:</b></h3><br>La Fundación lo ha autorizado y le ha generado el Código de Empleo.<br><br>Su código de empleo es ".$datos['codigo_empleo'].".";
+
+				//Se envía el email
+				$this->email_model->enviar_info($datos['destinatario'], "Ha sido Autorizado", $texto);
 				break;
 			/*
 			case "2":

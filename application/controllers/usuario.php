@@ -36,7 +36,7 @@ Class Usuario extends CI_Controller{
 		//Se valida que la peticion venga mediante ajax y no mediante el navegador
         if($this->input->is_ajax_request()){
 			// Se hace la actualización según el tipo
-			echo $this->usuario_model->actualizar($this->input->post('tipo'), $this->input->post('id_usuario'), $this->input->post('codigo_empleo'));
+			$this->usuario_model->actualizar($this->input->post('tipo'), $this->input->post('id_usuario'), $this->input->post('codigo_empleo'));
         }else{
             //Si la peticion fue hecha mediante navegador, se redirecciona a la pagina de inicio
             redirect('');
@@ -56,6 +56,64 @@ Class Usuario extends CI_Controller{
             redirect('');
         }
 	}// cargar_interfaz
+
+	function consultar_datos(){
+		//Se valida que la peticion venga mediante ajax y no mediante el navegador
+        if($this->input->is_ajax_request()){
+			// Se hace la consulta
+			print json_encode($this->usuario_model->consultar_datos($this->input->post('id_usuario')));
+        }else{
+            //Si la peticion fue hecha mediante navegador, se redirecciona a la pagina de inicio
+            redirect('');
+        }
+	}// consultar
+
+	function finalizar(){
+        //Se destruye la sesion actual
+        $this->session->sess_destroy();
+        
+        //Se redirige hacia el controlador principal
+        redirect('');
+    }//Fin finalizar
+
+	function validar(){
+		//Se valida que la peticion venga mediante ajax y no mediante el navegador
+        if($this->input->is_ajax_request()){
+        	//Recibo los datos por POST
+			$datos = $this->input->post('datos');
+
+			// Antes de enviar se encripta la clave
+            $datos['Password'] = md5($datos['Password']);
+
+			//Se ejecuta el modelo
+			$validacion = $this->usuario_model->validar($datos);
+
+			//Si encuentra el usuario
+			if($validacion != 'false'){
+				//Almacenamos las variables de sesión
+				$sesion = array(
+	 				"Pk_Id_Usuario" => $validacion->Pk_Id_Usuario,
+	 				"Codigo_Afiliacion" => $validacion->Codigo_Afiliacion,
+	 				"Codigo_Empleo" => $validacion->Codigo_Empleo,
+	 				"Nombre" => $validacion->Nombre,
+	 				"Email" => $validacion->Email,
+	 				"Tipo" => $validacion->Tipo
+ 				);
+
+				//Se cargan los datos a la sesión
+                $this->session->set_userdata($sesion);
+
+				//Se retorna
+				echo 'true';
+			}else{
+				// Retorna array Vacío
+				echo 'false';
+			} // if
+        }else{
+            //Si la peticion fue hecha mediante navegador, se redirecciona a la pagina de inicio
+            redirect('');
+        }
+	}
 }
 /* Fin del archivo usuario.php */
 /* Ubicación: ./application/controllers/usuario.php */

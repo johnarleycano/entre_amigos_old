@@ -102,7 +102,7 @@
                         'Email': email.val(),
                         'Fecha_Registro': "<?php echo date('Y-m-d H:i:s') ?>",
                         'Nombre': nombre.val(),
-                        'Password': "<?php echo md5(" + password1 + "); ?>",
+                        'Password': password1.val(),
                         'Telefono': telefono.val()
                     }; // datos
                     // console.log(datos);
@@ -114,13 +114,12 @@
                     if(usuario != 'false'){
                         //Declaramos un arreglo con los datos a enviar por correo
                         datos_email = {
-                            'tipo': "bienvenido",
                             'nombre': nombre.val(),
                             'codigo_afiliacion': codigo_afiliacion,
                             'password': password1.val(),
                             'destinatario': email.val()
                         }//Fin datos email
-                        console.log(datos_email)
+                        //console.log(datos_email)
 
                         //Se envía el correo electrónico de bienvenida
                         email = ajax("<?php echo site_url('email/enviar'); ?>", {'datos': datos_email, 'tipo': 'bienvenido'}, 'html');

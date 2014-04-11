@@ -1,3 +1,4 @@
+<div id="mensajes"></div>
 <div class="page-header">
 	<center><h1>Código de empleo System Three - Fundación Entreamigos de la Fe</h1></center>
 </div>
