@@ -10,9 +10,9 @@
 </div>
 <div class="col-lg-4">
 	<div class="well">
-		<h3>Registro</h3>
+		<h3>¿Por qué afiliarme?</h3>
 		<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
-		<a href="<?php echo site_url('registro'); ?>" class="btn btn-primary btn-lg">Regístrese ahora &raquo;</a>
+		<a href="<?php echo site_url('registro'); ?>" class="btn btn-primary btn-lg">Afiliarme ahora &raquo;</a>
 	</div>
 </div>
 <div class="col-lg-4">
