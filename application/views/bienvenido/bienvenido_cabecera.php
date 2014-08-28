@@ -10,28 +10,36 @@
 			<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
 			<li data-target="#carousel-example-generic" data-slide-to="1"></li>
 			<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+			<li data-target="#carousel-example-generic" data-slide-to="3"></li>
 		</ol>
 
 		<!--  -->
 		<div class="carousel-inner">
 			<div class="item active">
-				<img align="center" src="./img/Chrysanthemum.jpg" alt="...">
+				<img align="center" src="./img/01.jpg" alt="..." style="width: 600px;">
 				<div class="carousel-caption">
-					Imagen 1
+					"¿Qué clase de animal eres tú?"
 				</div>
 			</div>
 
 			<div class="item">
-				<img src="./img/desert.jpg" alt="...">
+				<img src="./img/02.jpg" alt="..." style="width: 600px;">
 				<div class="carousel-caption">
-					Imagen 2
+					"Los hombres de la calle no son feos"
 				</div>
 			</div>
-
+			
 			<div class="item">
-				<img src="./img/Hydrangeas.jpg" alt="...">
+				<img src="./img/03.jpg" alt="..." style="width: 600px;">
 				<div class="carousel-caption">
-					Imagen 3
+					"Los policías gordos"
+				</div>
+			</div>
+			
+			<div class="item">
+				<img src="./img/04.jpg" alt="..." style="width: 600px;">
+				<div class="carousel-caption">
+					"Pregúntele a Anita"
 				</div>
 			</div>
 		</div>
