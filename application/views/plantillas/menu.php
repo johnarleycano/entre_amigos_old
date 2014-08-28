@@ -22,10 +22,14 @@
 	                <li>
 	                    <a href="<?php echo site_url('usuario/afiliados'); ?>"><span class="glyphicon glyphicon-user"></span> Usuarios</a>
 	                </li>
-	                <!-- <li class="divider"></li> -->
+	                <li class="divider"></li>
 
 	                <li>
-	                    <a href="<?php echo site_url('cheque'); ?>"><span class="glyphicon glyphicon-th-list"></span> Cheques</a>
+	                    <a href="<?php echo site_url('cheque'); ?>"><span class="glyphicon glyphicon-plus"></span> Crear cheques</a>
+	                </li>
+
+	                <li>
+	                    <a href="<?php echo site_url('cheque/listar'); ?>"><span class="glyphicon glyphicon-th-list"></span> Ver cheques</a>
 	                </li>
 	            </ul>
 	        </li><!-- Administración -->

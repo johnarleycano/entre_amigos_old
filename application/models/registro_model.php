@@ -5,6 +5,11 @@
  * @author 		       John Arley Cano Salinas
  */
 Class Registro_model extends CI_Model{
+	function cargar_cheques(){
+		$this->db->select('*');
+		return $this->db->get('cheques')->result();
+	}
+
 	function validar_codigo_afiliacion($codigo){
 		//Se consulta el código
 		$this->db->where('Codigo_Afiliacion', $codigo);
@@ -66,6 +71,15 @@ Class Registro_model extends CI_Model{
 			case 'registro':
 				//Si se insertan bien
 				if ($this->db->insert('tbl_usuarios', $datos)) {
+					return 'true';
+				} else {
+					return 'false';
+				}
+				break;
+
+			case 'cheque':
+				//Si se insertan bien
+				if ($this->db->insert('cheques', $datos)) {
 					return 'true';
 				} else {
 					return 'false';
