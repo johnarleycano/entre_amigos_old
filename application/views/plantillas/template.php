@@ -26,9 +26,8 @@
             <span>&copy; Fundación Entreamigos de la Fe NIT 900026077-4</span>
             <span> | </span>
             <span><a href="<?php echo site_url('bienvenido/presentacion'); ?>">Quiénes Somos</a></span>
-            <span> | </span>
-            <span><a href="<?php echo site_url('bienvenido/denuncia'); ?>">Denuncie</a></span>
-
+            <!-- <span> | </span>
+            <span><a href="<?php // echo site_url('bienvenido/denuncia'); ?>">Denuncie</a></span> -->
          </footer>
       </div>
       <!-- /container -->

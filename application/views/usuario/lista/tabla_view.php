@@ -17,7 +17,7 @@
         ?>
             <tr>
                 <td>
-                    <?php if($usuario->Codigo_Empleo){ ?>
+                    <?php if($usuario->Codigo_Empleo != "Pendiente"){ ?>
                         <!-- Afiliados -->
                         <span class="glyphicon glyphicon-ok" title="Autorizado"></span>
                     <?php }else{ ?>

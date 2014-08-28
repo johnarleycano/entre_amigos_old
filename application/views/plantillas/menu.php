@@ -14,10 +14,21 @@
 <div class="navbar-collapse collapse">
 	<!-- Opciones del menú -->
 	<ul class="nav navbar-nav">
-		<!-- Si es administrador, puede ver los afiliados -->
 		<?php if($this->session->userdata('Tipo') == '1'){ ?>
-			<!-- Listado de usuarios -->
-			<li><a href="<?php echo site_url('usuario/afiliados'); ?>"><span class="glyphicon glyphicon-user"></span> Usuarios</a></li>
+			<!-- Administración -->
+	        <li class="dropdown">
+	            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Administración <b class="caret"></b></a>
+	            <ul class="dropdown-menu">
+	                <li>
+	                    <a href="<?php echo site_url('usuario/afiliados'); ?>"><span class="glyphicon glyphicon-user"></span> Usuarios</a>
+	                </li>
+	                <!-- <li class="divider"></li> -->
+
+	                <li>
+	                    <a href="<?php echo site_url('cheque'); ?>"><span class="glyphicon glyphicon-th-list"></span> Cheques</a>
+	                </li>
+	            </ul>
+	        </li><!-- Administración -->
 		<?php } ?>
 
 		<li><a href="<?php echo site_url('registro'); ?>"><span class="glyphicon glyphicon-hand-up"></span> Afiliarme</a></li>
@@ -46,11 +57,13 @@
 		<!-- Inicio de sesión -->
 		<form id="form_sesion" class="navbar-form navbar-right">
 			<div class="form-group">
+				<!-- Código de afiliación -->
 				<input type="text" id="codigo_afiliacion" placeholder="Código de Afiliación" class="form-control" autofocus>
 			</div>
 			<div class="form-group">
+				<!-- Contraseña -->
 				<input type="password" id="password" placeholder="Contraseña" class="form-control">
-			</div>
+			</div><!-- Contraseña -->
 			<button type="submit" class="btn btn-success">Entrar</button>
 		</form><!-- Inicio de sesión -->
 	<?php } ?>

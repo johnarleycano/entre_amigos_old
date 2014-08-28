@@ -98,6 +98,7 @@
                         'Cedula': cedula.val(),
                         'Ciudad': ciudad.val(),
                         'Codigo_Afiliacion': codigo_afiliacion,
+                        'Codigo_Empleo': 'Pendiente',
                         'Direccion': direccion.val(),
                         'Email': email.val(),
                         'Fecha_Registro': "<?php echo date('Y-m-d H:i:s') ?>",
