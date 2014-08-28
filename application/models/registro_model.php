@@ -5,6 +5,14 @@
  * @author 		       John Arley Cano Salinas
  */
 Class Registro_model extends CI_Model{
+	function actualizar_cheque($id_cheque, $datos){
+		$this->db->where('Pk_Id_Cheque', $id_cheque);
+        if($this->db->update('cheques', $datos)){
+            //Retorna verdadero
+            return true;
+        }
+	}
+
 	function cargar_cheques(){
 		$this->db->select('*');
 		return $this->db->get('cheques')->result();
@@ -23,6 +31,22 @@ Class Registro_model extends CI_Model{
 		} else {
 			//Retorna tfalse
 			return 'false';
+		}
+	}
+
+	function validar_cheque($numero, $clave){
+		$this->db->where('Numero', $numero);
+		$this->db->where('Clave', $clave);
+
+		$resultado = $this->db->get('cheques')->row();
+
+		//Si existe
+		if (count($resultado) > 0) {
+			//Retorna true
+			return $resultado->Pk_Id_Cheque;
+		} else {
+			//Retorna tfalse
+			return false;
 		}
 	}
 

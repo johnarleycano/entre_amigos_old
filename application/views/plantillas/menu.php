@@ -45,10 +45,10 @@
 			<!-- Si no tiene código de empleo, menú para pedir -->
 			<?php if($this->session->userdata('Codigo_Empleo') == 'Pendiente'){ ?>
 				<!-- Pedir código de empleo -->
-				<li><a href="<?php echo site_url('registro/pedir_codigo_empleo'); ?>"><span class="glyphicon glyphicon-cloud-upload"></span> Pedir mi Código de Empleo</a></li>
+				<li><a href="<?php echo site_url('registro/registrar_cheque'); ?>"><span class="glyphicon glyphicon-cloud-upload"></span> Registrar cheque</a></li>
 			<?php }else{ ?>
 				<!-- Mostrar código de empleo -->
-				<li><a href="<?php echo site_url('registro/pedir_codigo_empleo'); ?>"><span class="glyphicon glyphicon-cloud-upload"></span> Mi Código de Empleo</a></li>
+				<li><a href="<?php echo site_url('registro/codigo_empleo'); ?>"><span class="glyphicon glyphicon-cloud-upload"></span> Mi Código de Empleo</a></li>
 			<?php } ?>
 
 			<!-- Cerrar Sesión -->

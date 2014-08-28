@@ -46,6 +46,20 @@ Class Cheque extends CI_Controller{
         $this->load->view('plantillas/template', $this->data);
 	}//Fin index
 
+    function actualizar(){
+        //Se valida que la peticion venga mediante ajax y no mediante el navegador
+        if($this->input->is_ajax_request()){
+            // Se reciben los datos por post
+            $datos = $this->input->post('datos');
+            $id_cheque = $this->input->post('id_cheque');
+
+            echo $this->registro_model->actualizar_cheque($id_cheque, $datos);
+        }else{
+            //Si la peticion fue hecha mediante navegador, se redirecciona a la pagina de inicio
+            redirect('');
+        }
+    }
+
 	function guardar(){
 		//Se valida que la peticion venga mediante ajax y no mediante el navegador
         if($this->input->is_ajax_request()){
@@ -64,6 +78,28 @@ Class Cheque extends CI_Controller{
             redirect('');
         }
     }//Fin 
+
+    function validar(){
+        //Se valida que la peticion venga mediante ajax y no mediante el navegador
+        if($this->input->is_ajax_request()){
+            //Datos en POST
+            $numero = $this->input->post('numero');
+            $clave = $this->input->post('clave');
+
+            // Se consulta en el modelo que exista el cheque
+            $validar = $this->registro_model->validar_cheque($numero, $clave);
+
+            // Si existe
+            if($validar){
+                echo $validar;
+            }else{
+                echo 0;
+            }
+        }else{
+            //Si la peticion fue hecha mediante navegador, se redirecciona a la pagina de inicio
+            redirect('');
+        }
+    }
 }
 /* Fin del archivo cheque.php */
 /* Ubicación: ./application/controllers/cheque.php */

@@ -27,24 +27,34 @@ Class Usuario_model extends CI_Model{
 	}
 
 	function listar($tipo){
-		// suiche para cada tipo
-		switch ($tipo) {
-			//Cuando son afiliados
-			case 'afiliados':
-				$this->db->where('Codigo_Empleo <> "Pendiente"', null, false);
-				// $this->db->where('Codigo_Empleo', 'null');
-				break;
+		if($tipo == 'afiliados'){
+			$condicion = "WHERE tbl_usuarios.Codigo_Empleo <> 'Pendiente'";
+		}
+		if($tipo == 'pendientes'){
+			$condicion = "WHERE tbl_usuarios.Codigo_Empleo = 'Pendiente'";
+		}
+		if($tipo == 'todos'){
+			$condicion = "";
+		}
 
-			//Cuando no se han afiliado aun
-			case 'pendientes':
-				$this->db->where('Codigo_Empleo', 'Pendiente');
-				// $this->db->where('Codigo_Empleo IS NULL', null, false);
-				break;			
-		} // suiche
+		$sql =
+		"SELECT
+		tbl_usuarios.Pk_Id_Usuario,
+		tbl_usuarios.Nombre,
+		tbl_usuarios.Ciudad,
+		tbl_usuarios.Codigo_Afiliacion,
+		tbl_usuarios.Codigo_Empleo,
+		tbl_usuarios.Telefono,
+		cheques.Numero AS Numero_Cheque,
+		cheques.Clave,
+		cheques.Tipo_Consignacion,
+		cheques.Numero_Consignacion
+		FROM
+		tbl_usuarios
+		LEFT JOIN cheques ON cheques.Fk_Id_Usuario = tbl_usuarios.Pk_Id_Usuario
+		{$condicion}";
 		
-		//Se retorna la consulta con todos los campos
-		$this->db->select('*');
-		return $this->db->get('tbl_usuarios')->result();
+		return $this->db->query($sql)->result();
 	} // listar
 
 	function validar($datos){

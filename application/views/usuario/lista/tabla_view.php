@@ -2,13 +2,15 @@
 <table id="tbl_usuarios">
     <thead>
         <th>Nombre</th>
-        <th>Cédula</th>
         <th>Ciudad</th>
-        <th>Código de Afiliacion</th>
-        <th>Código de Empleo</th>
+        <th>Afiliacion</th>
+        <th>Código Empleo</th>
         <th>Teléfono</th>
-        <th>Dirección</th>
-        <th>Opciones</th>
+        <th>Nro. Cheque</th>
+        <th>Clave Cheque</th>
+        <th>Pago</th>
+        <th>Consignación</th>
+        <th>Opc</th>
     </thead>
     <tbody>
         <?php
@@ -26,12 +28,14 @@
                     <?php } ?>
                     <?php echo $usuario->Nombre; ?>
                 </td>
-                <td><?php echo $usuario->Cedula; ?></td>
                 <td><?php echo $usuario->Ciudad; ?></td>
                 <td><?php echo $usuario->Codigo_Afiliacion; ?></td>
                 <td><?php echo $usuario->Codigo_Empleo; ?></td>
                 <td><?php echo $usuario->Telefono; ?></td>
-                <td><?php echo $usuario->Direccion; ?></td>
+                <td><?php echo $usuario->Numero_Cheque; ?></td>
+                <td><?php echo $usuario->Tipo_Consignacion; ?></td>
+                <td><?php echo $usuario->Numero_Consignacion; ?></td>
+                <td><?php echo $usuario->Clave; ?></td>
                 <td>
                     <?php if($usuario->Codigo_Empleo != "Pendiente"){ ?>
                         <!-- Afiliar -->
@@ -59,7 +63,5 @@
         $('#tbl_usuarios').dataTable( {
             "bProcessing": true
         }); // Tabla
-
-
     });// document.ready
 </script>

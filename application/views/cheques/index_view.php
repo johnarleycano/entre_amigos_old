@@ -14,6 +14,7 @@
 
 <script type="text/javascript">
     $(document).ready(function(){
+
     	$("#guardar_cheque").on("click", function(){
     		//Declaración de variables
             var numero = $("#input_numero");  
