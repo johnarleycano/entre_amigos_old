@@ -1,13 +1,18 @@
 <div class="well row">
     <div id="mensajes"></div>
-	<div class="col-lg-6">
-        <label for="input_numero" class="control-label">Número *</label>
-        <input type="text" class="form-control" id="input_numero" placeholder="Escriba el número del cheque" autofocus>
+	<div class="col-lg-4">
+        <label for="input_cheque1" class="control-label">Cheque biblioteca privada *</label>
+        <input type="text" class="form-control" id="input_cheque1" placeholder="Escriba el número del cheque" autofocus>
     </div>
 
-    <div class="col-lg-6">
-        <label for="input_clave" class="control-label">Clave alfabética *</label>
-        <input type="text" class="form-control" id="input_clave" placeholder="Digite la clave del cheque">
+    <div class="col-lg-4">
+        <label for="input_cheque2" class="control-label">Cheque libro de poesía *</label>
+        <input type="text" class="form-control" id="input_cheque2" placeholder="Escriba el número del cheque">
+    </div>
+
+    <div class="col-lg-4">
+        <label for="input_cheque3" class="control-label">Sorteo por un año *</label>
+        <input type="text" class="form-control" id="input_cheque3" placeholder="Escriba el número del cheque">
     </div>
 </div>
 <button type="button" id="guardar_cheque" class="btn btn-success btn-block">Guardar</button><br>
@@ -17,13 +22,15 @@
 
     	$("#guardar_cheque").on("click", function(){
     		//Declaración de variables
-            var numero = $("#input_numero");  
-            var clave = $("#input_clave");  
+            var cheque1 = $("#input_cheque1");  
+            var cheque2 = $("#input_cheque2");  
+            var cheque3 = $("#input_cheque3");  
 
             //Campos obligatorios a validar
             var campos_vacios = new Array(
-                numero.val(), 
-                clave.val()
+                cheque1.val(), 
+                cheque2.val(),
+                cheque3.val()
             );
 
             // si no supera la validación
@@ -33,8 +40,9 @@
             }else{
             	//Datos a guardar
                 datos = {
-                    'Numero': numero.val(),
-                    'Clave': clave.val()
+                    'Cheque1': cheque1.val(),
+                    'Cheque2': cheque2.val(),
+                    'Cheque3': cheque3.val()
                 }; // datos
                 // console.log(datos);
 

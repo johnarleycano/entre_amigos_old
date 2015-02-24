@@ -34,9 +34,10 @@ Class Registro_model extends CI_Model{
 		}
 	}
 
-	function validar_cheque($numero, $clave){
-		$this->db->where('Numero', $numero);
-		$this->db->where('Clave', $clave);
+	function validar_cheque($cheque1, $cheque2, $cheque3){
+		$this->db->where('Cheque1', $cheque1);
+		$this->db->where('Cheque2', $cheque2);
+		$this->db->where('Cheque3', $cheque3);
 
 		$resultado = $this->db->get('cheques')->row();
 

@@ -83,11 +83,12 @@ Class Cheque extends CI_Controller{
         //Se valida que la peticion venga mediante ajax y no mediante el navegador
         if($this->input->is_ajax_request()){
             //Datos en POST
-            $numero = $this->input->post('numero');
-            $clave = $this->input->post('clave');
+            $cheque1 = $this->input->post('cheque1');
+            $cheque2 = $this->input->post('cheque2');
+            $cheque3 = $this->input->post('cheque3');
 
             // Se consulta en el modelo que exista el cheque
-            $validar = $this->registro_model->validar_cheque($numero, $clave);
+            $validar = $this->registro_model->validar_cheque($cheque1, $cheque2, $cheque3);
 
             // Si existe
             if($validar){

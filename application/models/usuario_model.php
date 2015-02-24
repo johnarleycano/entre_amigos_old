@@ -45,8 +45,9 @@ Class Usuario_model extends CI_Model{
 		tbl_usuarios.Codigo_Afiliacion,
 		tbl_usuarios.Codigo_Empleo,
 		tbl_usuarios.Telefono,
-		cheques.Numero AS Numero_Cheque,
-		cheques.Clave,
+		cheques.Cheque1,
+		cheques.Cheque2,
+		cheques.Cheque3,
 		cheques.Tipo_Consignacion,
 		cheques.Numero_Consignacion
 		FROM

@@ -1,16 +1,21 @@
 <div class="well row">
     <div id="mensajes"></div>
     <div class="col-lg-3">
-        <label for="input_numero" class="control-label">Número *</label>
-        <input type="text" class="form-control" id="input_numero" placeholder="Escriba el número del cheque" autofocus>
+        <label for="input_cheque1" class="control-label">Cheque biblioteca privada *</label>
+        <input type="text" class="form-control" id="input_cheque1" placeholder="Digite el número del cheque" autofocus>
     </div>
 
     <div class="col-lg-3">
-        <label for="input_clave" class="control-label">Clave *</label>
-        <input type="text" class="form-control" id="input_clave" placeholder="Digite la clave del cheque">
+        <label for="input_cheque2" class="control-label">Cheque libro poesía *</label>
+        <input type="text" class="form-control" id="input_cheque2" placeholder="Digite el número del cheque">
     </div>
 
-    <div class="col-lg-3">
+    <div class="col-lg-2">
+        <label for="input_cheque3" class="control-label">Sorteo por un año *</label>
+        <input type="text" class="form-control" id="input_cheque3" placeholder="Digite el número del cheque">
+    </div>
+
+    <div class="col-lg-2">
         <label for="select_tipo_consignacion" class="control-label">Tipo de pago *</label>
         <select id="select_tipo_consignacion" class="form-control" >
         	<option value="">Seleccione...</option>
@@ -21,7 +26,7 @@
         </select>
     </div>
 
-    <div class="col-lg-3">
+    <div class="col-lg-2">
         <label for="input_consignacion" class="control-label">Consignación *</label>
         <input type="text" class="form-control" id="input_consignacion" placeholder="Digite la clave del cheque">
     </div>
@@ -31,8 +36,9 @@
 <script type="text/javascript">
     $(document).ready(function(){
     	//Declaración de variables
-        var numero = $("#input_numero");  
-        var clave = $("#input_clave"); 
+        var cheque1 = $("#input_cheque1");  
+        var cheque2 = $("#input_cheque2"); 
+        var cheque3 = $("#input_cheque3"); 
         var tipo_consignacion = $("#select_tipo_consignacion");
         var numero_consignacion = $("#input_consignacion");
 
@@ -40,8 +46,9 @@
         $("#guardar_cheque").on("click", function(){
         	//Campos obligatorios a validar
             var campos_vacios = new Array(
-                numero.val(),
-				clave.val(),
+                cheque1.val(),
+                cheque2.val(),
+				cheque3.val(),
 				tipo_consignacion.val(),
 				numero_consignacion.val()
             );
@@ -52,7 +59,7 @@
                 mostrar_error($("#mensajes"), "Por favor diligencie todos los campos marcados con *");
             }else{
     			//Primero, se busca el chueque basado en el número y la clave
-				id_cheque = ajax("<?php echo site_url('cheque/validar'); ?>", {numero: numero.val(), clave: clave.val()}, 'html');
+				id_cheque = ajax("<?php echo site_url('cheque/validar'); ?>", {cheque1: cheque1.val(), cheque2: cheque2.val(), cheque3: cheque3.val()}, 'html');
 
 				// Si existe
 				if(id_cheque > 0){

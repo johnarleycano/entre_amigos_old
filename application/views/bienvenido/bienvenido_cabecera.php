@@ -1,6 +1,6 @@
 <div id="mensajes"></div>
 <div class="page-header">
-	<center><h1>Código de empleo System Three - Fundación Entreamigos de la Fe</h1></center>
+	<center><h1>Fundación Entreamigos de la Fe - NO AL MALTRATO INFANTIL</h1></center>
 </div>
 
 <div class="col-lg-12">
@@ -56,6 +56,9 @@
 <div class="clear"></div>
 <script type="text/javascript">
 	$(document).ready(function(){
-		$('#carousel-example-generic').carousel()
-	})
+		// Se activa el carrusel
+		$('#carousel-example-generic').carousel();
+
+		
+	});
 </script>

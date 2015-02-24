@@ -5,8 +5,9 @@
 <table id="tbl_cheques">
     <thead>
         <th></th>
-        <th>Número</th>
-        <th>Clave</th>
+        <th>Biblioteca privada</th>
+        <th>Libro poesía</th>
+        <th>Sorteo por un año</th>
     </thead>
     <tbody>
         <?php
@@ -17,8 +18,9 @@
         ?>
             <tr>
             	<td><?php echo $cont++; ?></td>
-            	<td><?php echo $cheque->Numero; ?></td>
-            	<td><?php echo $cheque->Clave; ?></td>
+            	<td><?php echo $cheque->Cheque1; ?></td>
+                <td><?php echo $cheque->Cheque2; ?></td>
+            	<td><?php echo $cheque->Cheque3; ?></td>
             </tr>
         <?php
         } // foreach

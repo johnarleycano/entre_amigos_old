@@ -24,13 +24,24 @@ Class Registro extends CI_Controller{
 	/**
 	 * Interfaz de inicio 
 	 */
-	function index(){
+    function index(){
         //Se establece el título de la página
         $this->data['titulo'] = 'Registro';
         //Se establece la vista que tiene el contenido principal
         $this->data['contenido_principal'] = 'registro/registro_view';
         //Se establece la vista que tiene la cabecera
         $this->data['cabecera'] = 'registro/registro_cabecera';
+        //Se carga la plantilla con las demas variables
+        $this->load->view('plantillas/template', $this->data);
+    }//Fin index
+
+	function codigo_empleo(){
+        //Se establece el título de la página
+        $this->data['titulo'] = 'Mi código de empleo';
+        //Se establece la vista que tiene el contenido principal
+        $this->data['contenido_principal'] = 'registro/codigo/codigo_empleo_view';
+        //Se establece la vista que tiene la cabecera
+        $this->data['cabecera'] = 'registro/codigo/codigo_empleo_cabecera';
         //Se carga la plantilla con las demas variables
         $this->load->view('plantillas/template', $this->data);
     }//Fin index

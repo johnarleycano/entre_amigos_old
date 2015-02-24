@@ -1,4 +1,4 @@
-body{padding-top:50px;padding-bottom:20px}
+body{font-size:1.8em;padding-top:50px;padding-bottom:20px}
 video{max-width:100%;height:auto}
 .oculto{display:none}
 .video-container{position:relative;padding-bottom:56.25%;padding-top:30px;height:0;overflow:hidden;}

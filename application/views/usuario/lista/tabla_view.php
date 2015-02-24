@@ -6,8 +6,9 @@
         <th>Afiliacion</th>
         <th>Código Empleo</th>
         <th>Teléfono</th>
-        <th>Nro. Cheque</th>
-        <th>Clave Cheque</th>
+        <th>Bibl. Privada</th>
+        <th>Libro poesía</th>
+        <th>Sorteo 1 año</th>
         <th>Pago</th>
         <th>Consignación</th>
         <th>Opc</th>
@@ -32,10 +33,11 @@
                 <td><?php echo $usuario->Codigo_Afiliacion; ?></td>
                 <td><?php echo $usuario->Codigo_Empleo; ?></td>
                 <td><?php echo $usuario->Telefono; ?></td>
-                <td><?php echo $usuario->Numero_Cheque; ?></td>
-                <td><?php echo $usuario->Tipo_Consignacion; ?></td>
+                <td><?php echo $usuario->Cheque1; ?></td>
+                <td><?php echo $usuario->Cheque2; ?></td>
+                <td><?php echo $usuario->Cheque3; ?></td>
                 <td><?php echo $usuario->Numero_Consignacion; ?></td>
-                <td><?php echo $usuario->Clave; ?></td>
+                <td><?php echo $usuario->Numero_Consignacion; ?></td>
                 <td>
                     <?php if($usuario->Codigo_Empleo != "Pendiente"){ ?>
                         <!-- Afiliar -->

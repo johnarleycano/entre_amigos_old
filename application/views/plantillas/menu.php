@@ -34,25 +34,32 @@
 	            </ul>
 	        </li><!-- Administración -->
 		<?php } ?>
-
+		
+		<!-- Afiliarme -->
 		<li><a href="<?php echo site_url('registro'); ?>"><span class="glyphicon glyphicon-hand-up"></span> Afiliarme</a></li>
 
 		<!-- Si se ha logueado -->
 		<?php if($id_usuario){ ?>
-			<!-- Invitar un amigo -->
-			<li><a href="<?php echo site_url('usuario/invitaciones'); ?>"><span class="glyphicon glyphicon-user"></span> Mis invitaciones</a></li>
+			<!-- Mis invitaciones -->
+			<li><a href="<?php echo site_url('usuario/invitador'); ?>"><span class="glyphicon glyphicon-user"></span> Mi invitador</a></li>
 
 			<!-- Si no tiene código de empleo, menú para pedir -->
 			<?php if($this->session->userdata('Codigo_Empleo') == 'Pendiente'){ ?>
 				<!-- Pedir código de empleo -->
 				<li><a href="<?php echo site_url('registro/registrar_cheque'); ?>"><span class="glyphicon glyphicon-cloud-upload"></span> Registrar cheque</a></li>
 			<?php }else{ ?>
+				<!-- Mis invitados -->
+				<li><a href="<?php echo site_url('usuario/invitados'); ?>"><span class="glyphicon glyphicon-user"></span> Mis invitados</a></li>
+
 				<!-- Mostrar código de empleo -->
 				<li><a href="<?php echo site_url('registro/codigo_empleo'); ?>"><span class="glyphicon glyphicon-cloud-upload"></span> Mi Código de Empleo</a></li>
 			<?php } ?>
+		<?php } ?>
 
+		<!-- Si se ha logueado -->
+		<?php if($id_usuario){ ?>
 			<!-- Cerrar Sesión -->
-			<li><a href="<?php echo site_url('usuario/finalizar') ?>"><span class="glyphicon glyphicon-remove"></span> Cerrar sesión <?php //echo substr($this->session->userdata('Nombre'), 0, 15); ?></a></li>
+			<li><a href="<?php echo site_url('usuario/finalizar') ?>"><span class="glyphicon glyphicon-remove"></span> Cerrar<?php //echo substr($this->session->userdata('Nombre'), 0, 15); ?></a></li>
 		<?php } ?>
 	</ul><!-- Opciones del menú -->
 	
