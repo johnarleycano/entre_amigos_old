@@ -2,7 +2,7 @@
 <?php $id_usuario = $this->session->userdata('Pk_Id_Usuario'); ?>
 
 <!--Menú-->
-<div class="navbar-header">
+<div class="navbar-header" style="margin: 15px;">
 	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 		<span class="icon-bar"></span>
 		<span class="icon-bar"></span>
@@ -11,7 +11,7 @@
 	<a class="navbar-brand" href="<?php echo site_url(); ?>"><span class="glyphicon glyphicon-home"></span></a>
 </div>
 
-<div class="navbar-collapse collapse">
+<div class="navbar-collapse collapse" style="margin: 15px; font-size: 1.2em; font-color:white;">
 	<!-- Opciones del menú -->
 	<ul class="nav navbar-nav">
 		<?php if($this->session->userdata('Tipo') == '1'){ ?>
@@ -20,41 +20,71 @@
 	            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Administración <b class="caret"></b></a>
 	            <ul class="dropdown-menu">
 	                <li>
+	                    <a href="<?php echo site_url('administracion/visitas_biblioteca'); ?>"><span class="glyphicon glyphicon-book"></span> Accesos a la biblioteca</a>
+	                </li>
+
+	                <!-- <li>
+	                    <a href="<?php // echo site_url('cheque'); ?>"><span class="glyphicon glyphicon-th-list"></span> Afiliaciones al club</a>
+	                </li> -->
+
+	                <li>
+	                    <a href="<?php echo site_url('administracion/codigos_sorteos'); ?>"><span class="glyphicon glyphicon-th"></span> Códigos y sorteos</a>
+	                </li>
+	                
+	                <li>
 	                    <a href="<?php echo site_url('usuario/afiliados'); ?>"><span class="glyphicon glyphicon-user"></span> Usuarios</a>
 	                </li>
+
+	                <!-- 
 	                <li class="divider"></li>
-
+	                
 	                <li>
-	                    <a href="<?php echo site_url('cheque'); ?>"><span class="glyphicon glyphicon-plus"></span> Crear cheques</a>
+	                    <a href="<?php //echo site_url('cheque'); ?>"><span class="glyphicon glyphicon-plus"></span> Crear cheques</a>
 	                </li>
-
+	                
 	                <li>
-	                    <a href="<?php echo site_url('cheque/listar'); ?>"><span class="glyphicon glyphicon-th-list"></span> Ver cheques</a>
-	                </li>
+	                    <a href="<?php //echo site_url('cheque/listar'); ?>"><span class="glyphicon glyphicon-th-list"></span> Ver cheques</a>
+	                </li> -->
 	            </ul>
 	        </li><!-- Administración -->
 		<?php } ?>
+
+
+		<!-- Si no se ha logueado -->
+		<?php if(!$id_usuario){ ?>
+			<!-- Afiliarme -->
+			<li><a href="<?php echo site_url('registro'); ?>"><span class="glyphicon glyphicon-hand-up"></span> Afiliarme</a></li>
+		<?php } ?>
 		
-		<!-- Afiliarme -->
-		<li><a href="<?php echo site_url('registro'); ?>"><span class="glyphicon glyphicon-hand-up"></span> Afiliarme</a></li>
+		
+		<?php if(false){ ?>
+			<!-- Comprar libro -->
+			<li><a href="<?php echo site_url('registro/compra'); ?>"><span class="glyphicon glyphicon-hand-up"></span> Empleo y afiliaciones</a></li>
+		<?php } ?>
 
 		<!-- Si se ha logueado -->
 		<?php if($id_usuario){ ?>
 			<!-- Mis invitaciones -->
 			<li><a href="<?php echo site_url('usuario/invitador'); ?>"><span class="glyphicon glyphicon-user"></span> Mi invitador</a></li>
 
-			<!-- Si no tiene código de empleo, menú para pedir -->
+			<!-- Si no tiene código de empleo, menú para pedir cheque -->
 			<?php if($this->session->userdata('Codigo_Empleo') == 'Pendiente'){ ?>
-				<!-- Pedir código de empleo -->
-				<li><a href="<?php echo site_url('registro/registrar_cheque'); ?>"><span class="glyphicon glyphicon-cloud-upload"></span> Registrar cheque</a></li>
+				<!-- Pedir cheque -->
+				<li><a href="<?php echo site_url('cheque'); ?>"><span class="glyphicon glyphicon-cloud-upload"></span> Afiliarse al club</a></li>
 			<?php }else{ ?>
-				<!-- Mis invitados -->
-				<li><a href="<?php echo site_url('usuario/invitados'); ?>"><span class="glyphicon glyphicon-user"></span> Mis invitados</a></li>
+				<!-- Mis referidos -->
+				<li><a href="<?php echo site_url('usuario/referidos'); ?>"><span class="glyphicon glyphicon-user"></span> Mis referidos</a></li>
 
 				<!-- Mostrar código de empleo -->
 				<li><a href="<?php echo site_url('registro/codigo_empleo'); ?>"><span class="glyphicon glyphicon-cloud-upload"></span> Mi Código de Empleo</a></li>
+				
+				<!-- Contáctenos -->
+				<li><a href="<?php echo site_url('bienvenido/denuncia'); ?>"><span class="glyphicon glyphicon-book"></span> Contáctenos</a></li>
 			<?php } ?>
 		<?php } ?>
+
+		<!-- Biblioteca -->
+		<!-- <li><a href="<?php // echo site_url('biblioteca'); ?>"><span class="glyphicon glyphicon-book"></span> Biblioteca</a></li> -->
 
 		<!-- Si se ha logueado -->
 		<?php if($id_usuario){ ?>

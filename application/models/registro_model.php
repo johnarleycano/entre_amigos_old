@@ -5,13 +5,14 @@
  * @author 		       John Arley Cano Salinas
  */
 Class Registro_model extends CI_Model{
-	function actualizar_cheque($id_cheque, $datos){
-		$this->db->where('Pk_Id_Cheque', $id_cheque);
-        if($this->db->update('cheques', $datos)){
+
+    function actualizar_cheque_usuario($id_cheque, $id_usuario){
+        $this->db->where('Pk_Id_Cheque', $id_cheque);
+        if($this->db->update('cheques', array("Fk_Id_Usuario" => $id_usuario))){
             //Retorna verdadero
             return true;
         }
-	}
+    }//actualizar_cheque_usuario
 
 	function cargar_cheques(){
 		$this->db->select('*');
@@ -34,10 +35,8 @@ Class Registro_model extends CI_Model{
 		}
 	}
 
-	function validar_cheque($cheque1, $cheque2, $cheque3){
-		$this->db->where('Cheque1', $cheque1);
-		$this->db->where('Cheque2', $cheque2);
-		$this->db->where('Cheque3', $cheque3);
+	function validar_cheque($datos){
+		$this->db->where($datos);
 
 		$resultado = $this->db->get('cheques')->row();
 
@@ -47,6 +46,17 @@ Class Registro_model extends CI_Model{
 			return $resultado->Pk_Id_Cheque;
 		} else {
 			//Retorna tfalse
+			return false;
+		}
+	}
+
+	function validar_cedula($numero){
+		//Se consulta el código
+		$this->db->where('Cedula', $numero);
+
+		if ($this->db->get('tbl_usuarios')->row()) {
+			return true;
+		} else {
 			return false;
 		}
 	}
@@ -110,6 +120,7 @@ Class Registro_model extends CI_Model{
 					return 'false';
 				}
 				break;
+
 			
 			/*case 'autorizacion':
 				//Si se insertan bien

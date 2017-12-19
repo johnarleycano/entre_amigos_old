@@ -1,29 +1,133 @@
 <p>
-	<div class="col-lg-6">
+	<div class="col-lg-12">
+		<p>
+			<?php $this->load->view("administracion/boton_pago"); ?>
+		</p>
+	</div>
+
+	<div class="col-lg-3">
 		<div class="well">
-			<h3>Biblioteca privada</h3>
+			<h3>Nuestra misión</h3>
+			<a onClick="javascript:mision()" class="btn btn-primary btn-lg">Ver más &raquo;</a>
+
+			<!-- Modal Misión -->
+			<div id="modal_mision" class="modal fade" >
+			    <!-- modal-content -->
+			    <div class="modal-dialog">
+			        <div class="modal-content">
+			            <div class="modal-header">
+			                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			                <h4 id="titulo_mensaje" class="modal-title"><center><b>Nuestra misión</b></center></h4>
+			            </div>
+			            <div class="modal-body">
+			            	<div class="row">
+			            		<div class="form-group col-lg-12">
+			            			<p>La fundacion Entreamigos es una institución que pretende hacer un aporte a la cultura colombiana.</p>
+			            			<p>Hemos creado una serie de libros, cuentos para adultos y para niños música y poesía, </p>
+			            			<p>Bellas historias para entretener y promover la lectura. Llegaremos a muchos hogares con una nueva propuesta, para incentivar la lectura para toda la familia.</p>
+				            	</div>
+			            	</div>
+			            </div>
+
+			            <div class="modal-footer">
+			                <button type="button" class="btn btn-info" data-dismiss="modal">Cerrar</button>
+			            </div>
+			        </div><!-- /.modal-content -->
+			    </div><!-- /.modal-dialog -->
+			</div><!-- /.modal -->
+		</div>
+	</div>
+
+	<div class="col-lg-3">
+		<div class="well">
+			<h3>Visión</h3>
+			<a onClick="javascript:vision()" class="btn btn-primary btn-lg">Ver más &raquo;</a>
+
+			<!-- Modal visión -->
+			<div id="modal_vision" class="modal fade" >
+			    <!-- modal-content -->
+			    <div class="modal-dialog">
+			        <div class="modal-content">
+			            <div class="modal-header">
+			                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			                <h4 id="titulo_mensaje" class="modal-title"><center><b>Nuestra visión</b></center></h4>
+			            </div>
+			            <div class="modal-body">
+			            	<div class="row">
+			            		<div class="form-group col-lg-12">
+				            		<p>La Fundación ENTREAMIGOS siempre ha creído que los valores más importantes no son valores materiales. Es necesario que primen los valores éticos, morales y también los espirituales.</p>
+				            		<p>Es por esto que nuestro proyecto está basado en un buen esfuerzo, ejemplo y una propuesta que conduzca a las personas a mejorar la calidad de vida.</p>
+				            		<p>Nuestra propuesta cultural queremos llevarla por todo el territorio colombiano y en un promedio de dos años compartirla  a dos países de Latinoamérica.</p>
+				            	</div>
+			            	</div>
+			            </div>
+
+			            <div class="modal-footer">
+			                <button type="button" class="btn btn-info" data-dismiss="modal">Cerrar</button>
+			            </div>
+			        </div><!-- /.modal-content -->
+			    </div><!-- /.modal-dialog -->
+			</div><!-- /.modal -->
+		</div>
+	</div>
+
+	<div class="col-lg-3">
+		<div class="well">
+			<h4>Club Entreamigos Lec</h4>
+			<a onClick="javascript:club()" class="btn btn-primary btn-lg">Ver más &raquo;</a>
+
+			<!-- Modal Club Entreamigos Lec -->
+			<div id="modal_club" class="modal fade" >
+			    <!-- modal-content -->
+			    <div class="modal-dialog">
+			        <div class="modal-content">
+			            <div class="modal-header">
+			                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			                <h3 id="titulo_mensaje" class="modal-title"><center><b>Club Entreamigos Lec</b></center></h3>
+			            </div>
+			            <div class="modal-body">
+			            	<div class="row">
+			            		<div class="form-group col-lg-12">
+			            			<p>El Club Entreamigos LEC es un programa interno de la fundación entreamigos, con el fin que nuestros asociados se sientan en un ambiente más acogedor.</p>
+			            			<p>Tenemos programas culturales basados en propuestas de lectura y en algunos casos tendremos días de esparcimiento, como encuentros recreativos.</p>
+			            			<p>Estaremos tocando puertas en diversas empresas con el fin de tener algunos beneficios para los afiliados.</p>
+			            			<p>Todos los afiliados al Club tendrán derecho a participar en los sorteos diarios, sin poner un solo peso.</p>
+				            	</div>
+			            	</div>
+			            </div>
+
+			            <div class="modal-footer">
+			                <button type="button" class="btn btn-info" data-dismiss="modal">Cerrar</button>
+			            </div>
+			        </div><!-- /.modal-content -->
+			    </div><!-- /.modal-dialog -->
+			</div><!-- /.modal -->
+		</div>
+	</div>
+	<div class="clear"></div>
+
+	<div class="col-lg-3">
+		<div class="well">
+			<h3>Bibliotecas privadas</h3>
 			<a onClick="javascript:biblio_privada()" class="btn btn-primary btn-lg">Ver más &raquo;</a>
 
-			<!-- Modal Biblioteca privada -->
+			<!-- Modal Biblioteca privadas -->
 			<div id="modal_biblio_privada" class="modal fade" >
 			    <!-- modal-content -->
 			    <div class="modal-dialog">
 			        <div class="modal-content">
 			            <div class="modal-header">
 			                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-			                <h4 id="titulo_mensaje" class="modal-title"><center><b>Biblioteca privada</b></center></h4>
+			                <h4 id="titulo_mensaje" class="modal-title"><center><b>Bibliotecas privadas</b></center></h4>
 			            </div>
 			            <div class="modal-body">
 			            	<div class="row">
 			            		<div class="form-group col-lg-12">
-			            			<ul>
-			            				<li>Son doce cuentos para adultos, historias de fantasía con un poco de realidad, mostraremos como se mueve nuestro entorno con una propuesta cultural.</li>
-			            				<li>Los hemos llamado pastelitos literarios ya que demoran en leerse de cuarenta  a cincuenta minutos promedio, todos creados en la Fundación.</li>
-			            				<li>Esta biblioteca es virtual  y la puedes usar a la hora que lo desees desde  cualquier lugar del mundo.</li>
-			            				<li>El valor de la biblioteca es de <strong>350,000</strong> moneda de <b><i>Don Rico</i></b>.</li>
-			            				<li>No se puede comprar con la moneda tradicional.</li>
-			            				<p>Autor de todos los libros: Appo-yarce</p>
-			            			</ul>
+			            			<p>Las llamamos bibliotecas privadas, porque de alguna manera, no todas las personas podrán acceder a ella.</p>
+			            			<p>Colocaremos puntos de atención en algunos barrios, en almacenes y supermercados.</p>
+			            			<p>Todas las personas que son invitados con el volante físico de patrocinio, podrán hacer parte de las bibliotecas privadas con libros impresos que llevarán a casa, sin ningún costo, mes a mes por un año.</p>
+			            			<p>Si la persona se presenta con el volante de invitación, después de los 1.000 afiliados; o sea después de haber registrado los primeros 1.000 a la biblioteca asignada el volante quedará desactivado y habría que averiguar si hay posibilidades de ingresarlo al grupo siguiente o quizá pierda la oportunidad de afiliación con los libros impresos.</p>
+			            			<p>También podrá hacer su afiliación por la web; tendrá libros virtuales mes a mes por un año y participará en el programa de los sorteos como los demás participantes; hasta que la fundación exista.</p>
 				            	</div>
 			            	</div>
 			            </div>
@@ -37,50 +141,13 @@
 		</div>
 	</div>
 
-	<div class="col-lg-6">
-		<div class="well">
-			<h3>Libro de poesía</h3>
-			<a onClick="javascript:libro_poesia()" class="btn btn-primary btn-lg">Ver más &raquo;</a>
-
-			<!-- Modal libro de poesía -->
-			<div id="modal_poesia" class="modal fade" >
-			    <!-- modal-content -->
-			    <div class="modal-dialog">
-			        <div class="modal-content">
-			            <div class="modal-header">
-			                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-			                <h4 id="titulo_mensaje" class="modal-title"><center><b>Libro de poesía</b></center></h4>
-			            </div>
-			            <div class="modal-body">
-			            	<div class="row">
-			            		<div class="form-group col-lg-12">
-			            			<ul>
-			            				<li>Este libro es elaborado con varias técnicas en poesías: Soneto, Romance, Poesía Libre, Prosas Liricas y Románticas.</li>
-			            				<li>Contiene más de cuarenta poesías y cuatrocientos sesenta y cinco prosas; en algunos casos especiales el libro será entregado en material físico cuando a la fundación le quede fácil y a la mano,  de otra manera la Fundación lo entregará de una manera virtual de tal manera que el afiliado lo pueda bajar y pueda  sacarlo en papel y conservarlo como lo desee.</li>
-			            				<li>Este libro tiene un costo en la Fundación de <b>150.000</b> moneda de <i>Don Rico.</i></li>
-			            				<li>No se puede comprar con la moneda tradicional.</li>
-			            				<p>Autor de todos los libros: Appo-yarce</p>
-			            			</ul>
-				            	</div>
-			            	</div>
-			            </div>
-
-			            <div class="modal-footer">
-			                <button type="button" class="btn btn-info" data-dismiss="modal">Cerrar</button>
-			            </div>
-			        </div><!-- /.modal-content -->
-			    </div><!-- /.modal-dialog -->
-			</div><!-- /.modal -->
-		</div>
-	</div>
-
-	<div class="col-lg-6">
+	<div class="col-lg-3">
 		<div class="well">
 			<h3>Costos de afiliación</h3>
 			<a onClick="javascript:costos()" class="btn btn-primary btn-lg">Ver más &raquo;</a>
 
 			<!-- Modal costos de afiliación -->
-			<div id="modal_poesia" class="modal fade" >
+			<div id="modal_costos" class="modal fade" >
 			    <!-- modal-content -->
 			    <div class="modal-dialog">
 			        <div class="modal-content">
@@ -91,12 +158,17 @@
 			            <div class="modal-body">
 			            	<div class="row">
 			            		<div class="form-group col-lg-12">
-			            			<ul>
-			            				<li>El aporte único una sola vez en la vida es de <b><i>50,000 pesos</i></b> Entregados de la manera indicada por la Fundación.</li>
-			            				<li>Cuando la Fundación contacte directamente al invitado, un asesor autorizado le entregará un cheque de 500.000 moneda de DON RICO y en el cheque tres códigos de compra el cual debes de ingresar en la página.</li>
-			            				<li>Esto lo puede hacer un asesor, sin embargo, no está autorizado para cobrar afiliaciones, estas se deben hacer a través de los medios indicados por la Fundación; no permita que le roben.</li>
-			            				<li>Si lo invita un afiliado que tenga el Código de Empleo sólo le puede cobrar $ 100.000 por venderle el paquete, y después de verificar y si él es de su confianza, le podrá entregar el dinero, el invitado aportará a la Fundación los 50.000 de la afiliación por una sola vez en la vida, no deben haber más aportes.</li>
-			            			</ul>
+			            			<p>Hemos querido no ser muy gravosos con la propuesta de la afiliación. Le proponemos que, tan solo con $50.000 pesos moneda colombiana o 25 dólares una sola vez en la vida, sería suficiente para que la fundación pudiera ayudarse, y así cumplir con nuestros objetivos.</p>
+			            			<p>En esta área los cuentos son puestos en su panel interno, de una manera virtual.</p>
+			            			<p>Sí, la Biblioteca privada, es de contacto personal, será con invitación, con patrocinio empresarial y tendrá un costo de $84.000 pesos colombianos.</p>
+			            			<p>Esta afiliación, será una sola vez en la vida, tendrán libros físicos, impresos, que podrán llevar a casa mes a mes por un año, tendrán la chequera de Don Rico, sin ningún costo adicional, para que compre lo que no se puede comprar con la moneda tradicional.</p>
+			            			<p>
+			            				Podrá afiliarse de la siguiente manera:
+			            				<ul>
+			            					<li>Si es por la web, lo podrá hacer desde cualquier lugar.</li>
+			            					<li>A la cuenta de ahorros # 13832618-6 la Cooperativa Confiar a nombre de Fundación Entreamigos de la FE</li>
+			            				</ul>
+			            			</p>
 				            	</div>
 			            	</div>
 			            </div>
@@ -109,7 +181,8 @@
 			</div><!-- /.modal -->
 		</div>
 	</div>
-	<div class="col-lg-6">
+
+	<div class="col-lg-3">
 		<div class="well">
 			<h3>Código de empleo</h3>
 			<a onClick="javascript:codigo()" class="btn btn-primary btn-lg">Ver más &raquo;</a>
@@ -126,23 +199,228 @@
 			            <div class="modal-body">
 			            	<div class="row">
 			            		<div class="form-group col-lg-12">
+			            			<p>El Código de Empleo es nuestra propuesta para que muchas personas nos conozcan. Si usted ve que este programa es bueno, ¿por qué no recomendarlo?</p>
+			            			<p>Todos los afiliados tendrán el código de empleo, esta cera la célula que lo identificara en el área de los sorteos.</p>
+			            			<p>Al invitador le daremos un sorteo similar al sorteo que recibe el referido.</p>
+			            			<p>Los dos estarán en la misma célula. En caso de que la célula salga ganadora, se llamarán las dos personas: el afiliado titular y el invitador.</p>
+			            			<p>Y de solo dos balotas, uno de ellos será ganador del premio mayor, el otro recibirá 5,000,000 de pesos colombianos como premio de consolación. Estos sorteos se harán en videos públicos vía web.</p>
+			            			<p>Recuerde enviar el código de empleo de su invitador por el correo de su panel interno, así será referenciado en la célula de su invitado.</p>
+			            			<p>Cada vez que use su Código de Empleo, sucederá lo mismo con su referido. Entre más invitados tengas, más posibilidades de ganar.</p>
+				            	</div>
+			            	</div>
+			            </div>
+
+			            <div class="modal-footer">
+			                <button type="button" class="btn btn-info" data-dismiss="modal">Cerrar</button>
+			            </div>
+			        </div><!-- /.modal-content -->
+			    </div><!-- /.modal-dialog -->
+			</div><!-- /.modal -->
+		</div>
+	</div>
+
+	<div class="col-lg-3">
+		<div class="well">
+			<h3>Medios de pago</h3>
+			<a onClick="javascript:consignacion()" class="btn btn-primary btn-lg">Ver más &raquo;</a>
+
+			<!-- Modal consignaciones -->
+			<div id="modal_consignacion" class="modal fade" >
+			    <!-- modal-contejnt -->
+			    <div class="modal-dialog">
+			        <div class="modal-content">
+			            <div class="modal-header">
+			                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			                <h4 id="titulo_mensaje" class="modal-title"><center><b>Consignaciones</b></center></h4>
+			            </div>
+			            <div class="modal-body">
+			            	<div class="row">
+			            		<div class="form-group col-lg-12">
+			            			<p>Hay tres formas de consignar en la fundación.</p>
+			            			<ol>
+			            				<li>Al recibir un volante de invitación de una manera directa, diríjase al lugar que le indique el volante, haga su afiliación allí y luego acérquese al punto de atención, en esta área solo deberá consignar $84.000, una sola vez en la vida.</li>
+			            				<li>Si no puede tener contacto personal, envié su aporte por el área de consignación, a la cooperativa en la cuenta que le asignaremos.</li>
+			            				<li>3) Si su empresa, o una persona natural, desea hacer un aporte, de una manera diferente, claro que puede hacerlo.</li>
+			            			</ol>
+									<br>
+			            			<p>Si usted ve que este programa es de beneficio para la comunidad y desea hacer un aporte personal o empresarial puede hacerlo a la cuenta que verá a continuación:</p>
+			            			<p>Cuenta de ahorros # 13832618-6 la Cooperativa Confiar a nombre de Fundación Entreamigos de la FE</p>
+				            	</div>
+
+			            		<div class="form-group col-lg-12">
+			            			<img src="<?php echo base_url().'img/recaudos.jpg'; ?>" width="480px">
+			            		</div>
+			            	</div>
+			            </div>
+
+			            <div class="modal-footer">
+			                <button type="button" class="btn btn-info" data-dismiss="modal">Cerrar</button>
+			            </div>
+			        </div><!-- /.modal-content -->
+			    </div><!-- /.modal-dialog -->
+			</div><!-- /.modal -->
+		</div>
+	</div>
+
+	<div class="col-lg-3">
+		<div class="well">
+			<h3>Sorteos</h3>
+			<a onClick="javascript:sorteos()" class="btn btn-primary btn-lg">Ver más &raquo;</a>
+
+			<!-- Modal sorteos -->
+			<div id="modal_sorteos" class="modal fade" >
+			    <!-- modal-contejnt -->
+			    <div class="modal-dialog">
+			        <div class="modal-content">
+			            <div class="modal-header">
+			                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			                <h4 id="titulo_mensaje" class="modal-title"><center><b>Sorteos</b></center></h4>
+			            </div>
+			            <div class="modal-body">
+			            	<div class="row">
+			            		<div class="form-group col-lg-12">
+			            			<p>Es importante aclarar que en ningún momento, la fundación vende ningún sorteo. Todos los sorteos son gratuitos para los afiliados y para los asesores voluntarios a ASV.</p>
+									<p>Cada vez que entre un afiliado, haremos un sorteo; si entran 100 afiliados haremos 100 sorteos ese mismo día.</p>
+				            		<p>
+	            						Cada sorteo que compraremos en la Fundación; para ustedes los afiliados se harán todos los días de la semana, los haremos así:
+	            						<ul>
+	            							<li>Lunes por CUNDINAMARCA</li>
+	            							<li>Martes por CRUZ ROJA</li>
+	            							<li>Miércoles por Baloto</li>
+	            							<li>Jueves por BOGOTÁ</li>
+	            							<li>Viernes por MEDELLÍN</li>
+	            							<li>Sábados por Baloto</li>
+	            							<li>Domingo por la paisita noche 2</li>
+	            						</ul>
+				            		</p>
+				            		<p>Los sorteos se harán por 4 cifras sin series, exceptuando el Baloto.</p>
+				            		<p>Los números serán colocados en el perfil de Facebook de la Fundación, todos los días, desde cualquier momento de el día, cuando son de 4 cifras. Cuando se trata de el Baloto, se colocarán 10 minutos antes de el sorteo para que no vayan a dañar los premios.</p>
+				            		<p>Recuerde: el premio de el Baloto, sólo se entregará EL PREMIO MAYOR; no responderemos por las 3, las 4 o las 5 cifras.</p>
+				            		<br>
+				            		<p>En el momento en que la Fundación gané el premio mayor de cualquiera de los sorteos, les será enviado un correo a su e-mail, para notificarles el día de la entrega de el premio a uno de los afiliados que tenga el código de empleo y al ASV (Asesor Voluntario); habrán 2 balotas; el uno ganará el premio mayor, el otro se irá con $5.000.000 de premio de consolación.</p>
+				            	</div>
+
+				            	<div class="form-group col-lg-12">
+			            			<img src="<?php echo base_url().'img/sorteos.jpg'; ?>" width="480px">
+			            		</div>
+			            	</div>
+			            </div>
+
+			            <div class="modal-footer">
+			                <button type="button" class="btn btn-info" data-dismiss="modal">Cerrar</button>
+			            </div>
+			        </div><!-- /.modal-content -->
+			    </div><!-- /.modal-dialog -->
+			</div><!-- /.modal -->
+		</div>
+	</div>
+
+	<div class="col-lg-3">
+		<div class="well">
+			<h3>La moneda de Don Rico</h3>
+			<a onClick="javascript:moneda()" class="btn btn-primary btn-lg">Ver más &raquo;</a>
+
+			<!-- Modal moneda -->
+			<div id="modal_moneda" class="modal fade" >
+			    <!-- modal-content -->
+			    <div class="modal-dialog">
+			        <div class="modal-content">
+			            <div class="modal-header">
+			                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			                <h4 id="titulo_mensaje" class="modal-title"><center><b>La moneda de Don Rico</b></center></h4>
+			            </div>
+			            <div class="modal-body">
+			            	<div class="row">
+			            		<div class="form-group col-lg-12">
+				            		<p>La moneda de Don Rico funcionará de la siguiente manera:</p>
+
+				            		<ul>
+				            			<li>
+				            				<p><b>Litero:</b> es un personaje de la Fundación, que de varias maneras acercará a las personas con un volante de invitación, llamado patrocinio empresarial; éstos invitados se acercarán personalmente al punto de atención y harán su primer contacto personal con la Fundación. Si cumple con lo requerido en el volante, le entregarán su primer cuento físico (Impreso); y además le entregarán una chequera con 12 cheques (moneda oficial de Don Rico), para que compre mes a mes lo que no se puede comprar con la moneda tradicional.</p>
+				            				<p>El afiliado en ésta área hará un aporte de $84.000 pesos una sola vez en la vida y se tomará como una donación a la Fundación, para apoyar la campaña.</p>
+				            				<p>La fundación hará un convenio en algún almacén o supermercado, cercano y de fácil acceso a usted, donde usted pueda acercarse mes a mes y comprar con la chequera de Don Rico.</p>
+				            				<p>Todas las personas que tenga la chequera de Don Rico, tendrán libros físicos y virtual.</p>
+				            				<p>Los sorteos son sin ningún costo, hasta que la fundación exista.</p>
+				            			</li>
+				            		</ul>
+				            	</div>
+			            	</div>
+			            </div>
+			            <div class="modal-footer">
+			                <button type="button" class="btn btn-info" data-dismiss="modal">Cerrar</button>
+			            </div>
+			        </div><!-- /.modal-content -->
+			    </div><!-- /.modal-dialog -->
+			</div><!-- /.modal -->
+		</div>
+	</div>
+
+	<div class="col-lg-3">
+		<div class="well">
+			<h3>Donaciones</h3>
+			<a onClick="javascript:donaciones()" class="btn btn-primary btn-lg">Ver más &raquo;</a>
+
+			<!-- Modal Donaciones -->
+			<div id="modal_donaciones" class="modal fade" >
+			    <!-- modal-contejnt -->
+			    <div class="modal-dialog">
+			        <div class="modal-content">
+			            <div class="modal-header">
+			                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			                <h4 id="titulo_mensaje" class="modal-title"><center><b>Donaciones personales y empresariales</b></center></h4>
+			            </div>
+			            <div class="modal-body">
+			            	<div class="row">
+			            		<div class="form-group col-lg-12">
+			            			<p>Cada donación empresarial o personal, nos acercará a lograr las metas que nos hemos trazado, no solo con los adultos, sino también con los niños.</p>
+			            			<p>Queremos romper también ésta dificultad de poder llegar a los niños e instalarles su biblioteca privada en casa, física y también virtual.</p>
+			            			<p>Con su apoyo lo haremos más fácil.</p>
+			            			<p>Por ahora daremos inicio con los adultos, la problemática de la lectura que estamos viendo ahora y son las que las estadísticas nos muestran, que de cada 10 afiliados, sólo uno ésta leyendo en Colombia. Eso quiere decir que los niños se están quedando sin ejemplo, nuestro esfuerzo estará dirigido a que los adultos tengan un contacto con la lectura y además podamos darle un buen ejemplo a los niños.</p>
+			            			<br>
+			            			<p>Haga sus donaciones a la cuenta de ahorros # 13832618-6 la Cooperativa Confiar a nombre de Fundación Entreamigos de la FE</p>
+			            			<p><b>Contáctenos: <i>bancobanbc@hotmail.com</i></b></p>
+			            			<br>
+			            			<p>Envíenos su inquietud para contactarlo con un asesor personalmente. Gracias por su apoyo</p>
+				            	</div>
+			            	</div>
+			            </div>
+
+			            <div class="modal-footer">
+			                <button type="button" class="btn btn-info" data-dismiss="modal">Cerrar</button>
+			            </div>
+			        </div><!-- /.modal-content -->
+			    </div><!-- /.modal-dialog -->
+			</div><!-- /.modal -->
+		</div>
+	</div>
+
+	<div class="col-lg-3">
+		<div class="well">
+			<h3>Cómo afiliarse desde cualquier lugar</h3>
+			<a onClick="javascript:como_afiliarse()" class="btn btn-primary btn-lg">Ver más &raquo;</a>
+
+			<!-- Modal Afiliaciones -->
+			<div id="modal_aliliaciones" class="modal fade" >
+			    <!-- modal-contejnt -->
+			    <div class="modal-dialog">
+			        <div class="modal-content">
+			            <div class="modal-header">
+			                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			                <h4 id="titulo_mensaje" class="modal-title"><center><b>Cómo afiliarse desde cualquier lugar</b></center></h4>
+			            </div>
+			            <div class="modal-body">
+			            	<div class="row">
+			            		<div class="form-group col-lg-12">
 			            			<ul>
-			            				<li>Consiste en que nuestro afiliado pueda trabajar vendiendo nuestros productos al 100% seguro.</li>
-			            				<li>Si ya tienes el Código de empleo, puedes invitar a un referido. Le ofreces, lo que te ofrecimos, no más.</li>
-			            				<li>Puedes cobrarle por el paquete $100.000 moneda legal y que aporte los 50,000  por los medios asignados por la fundación, para su afiliación una sola vez en la vida.</li>
-			            				<li>También puedes regalar nuestros productos al 100% seguro pero no debe faltar la afiliación a la fundación, ella te permitirá ser parte de nuestra campaña.</li>
-			            				<li>Puedes vender o regalar nuestros productos cada vez que lo desees aún desde cualquier parte del mundo.</li>
-
-			            				<p>
-			            					<ul>
-			            						<li>Paquete: Biblioteca privada 350.000</li>
-												<li>Libro poesías: 150.000</li>
-												<li>7 regalos empresariales y el Código de Empleo.</li>
-			            					</ul>
-			            				</p>
-
-			            				<p>Nunca darle más de 100.000 a su invitador.</p>
+			            				<li>Si usted desea participar en éste programa, inscribiéndose desde cualquier lugar donde se encuentre, lo debe de hacer por la página web <b><i><a href="http://entreamigosdecolombia.org/index.php/registro" target="_blank">http://entreamigosdecolombia.org/afiliarse</a></i></b></li>
+			            				<li>Tenga a la mano el número de consignación y la empresa por la cual la realizó, coloque sus datos personales y lo requerido por las casillas; transcurridos de 24 horas, daremos la autorización de su afiliación vía correo. En caso tal de un inconveniente el programa lo deja entrar hasta un panel interno, el cual le dará el código de afiliación y la clave; por allí encontrará un correo que nos podrá enviar cualquier inquietud que tenga para que no se vaya a perder su afiliación.</li>
+			            				<li>Tendrá la biblioteca privada virtual.</li>
+			            				<li>Participará en los sorteos, día a día, mes ames, año tras año; hasta que la fundación exista.</li>
+			            				<li>No tendrá que pagar mensualidades.</li>
+			            				<li>Pondremos un libro (cuento) cada mes por un año.</li>
 			            			</ul>
+			            			<p>La sección sin referido es la única área, donde el afiliado no tendrá que compartir el premio con ningún asesor voluntario; ganará los premios al 100%. Los sorteos son donados por la fundación.</p>
+			            			<p>Recuerde que en esta área la afiliación tiene un costo de $50.000 pesos colombianos, una sola vez en la vida, libres de envío.</p>
 				            	</div>
 			            	</div>
 			            </div>
@@ -158,6 +436,41 @@
 </p>
 
 <script type="text/javascript">
+	function mision(){
+		// Se abre la ventana
+    	$('#modal_mision').modal('show');
+	}
+
+	function donaciones(){
+		// Se abre la ventana
+    	$('#modal_donaciones').modal('show');
+	}
+
+	function como_afiliarse(){
+		// Se abre la ventana
+    	$('#modal_aliliaciones').modal('show');
+	}
+
+	function moneda(){
+		// Se abre la ventana
+    	$('#modal_moneda').modal('show');
+	}
+
+	function consignacion(){
+		// Se abre la ventana
+    	$('#modal_consignacion').modal('show');
+	}
+
+	function sorteos(){
+		// Se abre la ventana
+    	$('#modal_sorteos').modal('show');
+	}
+
+	function vision(){
+		// Se abre la ventana
+    	$('#modal_vision').modal('show');
+	}
+
 	function libro_poesia(){
 		// Se abre la ventana
     	$('#modal_poesia').modal('show');
@@ -171,6 +484,11 @@
 	function biblio_privada(){
 		// Se abre la ventana
     	$('#modal_biblio_privada').modal('show');
+	}
+
+	function club(){
+		// Se abre la ventana
+    	$('#modal_club').modal('show');
 	}
 
 	function costos(){

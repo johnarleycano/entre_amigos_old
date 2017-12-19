@@ -12,8 +12,9 @@
          </div>
       </div>
 
-      <!---->
-      <?php $this->load->view($cabecera); ?>
+      <div style="margin-top: 60px;">
+         <?php $this->load->view($cabecera); ?>
+      </div>
 
       <div class="container">
          <!-- Example row of columns -->
@@ -25,9 +26,10 @@
          <footer>
             <span>&copy; Fundación Entreamigos de la Fe NIT 900026077-4</span>
             <span> | </span>
-            <span><a href="<?php echo site_url('bienvenido/presentacion'); ?>">Quiénes Somos</a></span>
-            <!-- <span> | </span>
-            <span><a href="<?php // echo site_url('bienvenido/denuncia'); ?>">Denuncie</a></span> -->
+            <span>
+               <a href="<?php echo site_url('bienvenido/denuncia'); ?>">Envíe su inquietud</a>
+               <!-- <a href="<?php // echo site_url('bienvenido/proteccion'); ?>">Aviso legal</a> -->
+            </span>
          </footer>
       </div>
       <!-- /container -->
@@ -37,6 +39,7 @@
       <script>window.jQuery || document.write('<script src="<?php echo base_url(); ?>js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
       <script src="<?php echo base_url(); ?>js/vendor/bootstrap.min.js"></script>
       <script src="<?php echo base_url(); ?>js/vendor/jquery.dataTables.min.js"></script>
+      <script src="<?php echo base_url(); ?>js/vendor/bootstrap-datepicker2.js"></script>
       <script src="<?php echo base_url(); ?>js/funciones.js"></script>
       <!--
       <script>

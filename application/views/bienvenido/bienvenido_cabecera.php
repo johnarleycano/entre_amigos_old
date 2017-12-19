@@ -1,6 +1,6 @@
 <div id="mensajes"></div>
 <div class="page-header">
-	<center><h1>Fundación Entreamigos de la Fe - NO AL MALTRATO INFANTIL</h1></center>
+	<center><h1>FUNDACIÓN ENTREAMIGOS - CLUB ENTREAMIGOS LEC</h1></center>
 </div>
 
 <div class="col-lg-12">
@@ -16,31 +16,39 @@
 		<!--  -->
 		<div class="carousel-inner">
 			<div class="item active">
-				<img align="center" src="./img/01.jpg" alt="..." style="width: 600px;">
-				<div class="carousel-caption">
-					"¿Qué clase de animal eres tú?"
-				</div>
+				<a href="javascript:mensaje()">
+					<img align="center" src="./img/biblioteca_01.png" alt="..." style="width: 700px;">
+					<div class="carousel-caption">
+						<!-- <a href="<?php // echo site_url("registro"); ?>">Afiliarse</a> -->
+					</div>
+				</a>
 			</div>
 
 			<div class="item">
-				<img src="./img/02.jpg" alt="..." style="width: 600px;">
-				<div class="carousel-caption">
-					"Los hombres de la calle no son feos"
-				</div>
+				<a href="javascript:mensaje()">
+					<img align="center" src="./img/biblioteca_02.png" alt="..." style="width: 700px;">
+					<div class="carousel-caption">
+						<!-- "¿Qué clase de animal eres tú?" -->
+					</div>
+				</a>
+			</div>
+
+			<div class="item">
+				<a href="javascript:mensaje()">
+					<img src="./img/biblioteca_03.png" alt="..." style="width: 700px;">
+					<div class="carousel-caption">
+						<!-- "Los hombres de la calle no son feos" -->
+					</div>
+				</a>
 			</div>
 			
 			<div class="item">
-				<img src="./img/03.jpg" alt="..." style="width: 600px;">
-				<div class="carousel-caption">
-					"Los policías gordos"
-				</div>
-			</div>
-			
-			<div class="item">
-				<img src="./img/04.jpg" alt="..." style="width: 600px;">
-				<div class="carousel-caption">
-					"Pregúntele a Anita"
-				</div>
+				<a href="javascript:mensaje()">
+					<img src="./img/biblioteca_04.png" alt="..." style="width: 700px;">
+					<div class="carousel-caption">
+						<!-- "Los policías gordos" -->
+					</div>
+				</a>
 			</div>
 		</div>
 
@@ -55,6 +63,13 @@
 </div>
 <div class="clear"></div>
 <script type="text/javascript">
+	function mensaje()
+	{
+		alert("Al momento de afiliarte, tendrás todos los libros a tu disposición en la biblioteca");
+
+		return false;
+	}
+
 	$(document).ready(function(){
 		// Se activa el carrusel
 		$('#carousel-example-generic').carousel();

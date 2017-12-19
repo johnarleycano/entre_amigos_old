@@ -40,6 +40,63 @@ Class Administracion extends CI_Controller{
     }//Fin index()
 
     /**
+     * Contador de visitas a la biblioteca
+     */
+    function visitas_biblioteca(){
+        //se establece el titulo de la pagina
+        $this->data['titulo'] = 'Visitas a la bilbioteca';
+        $this->data['visitas'] = $this->administracion_model->visitas_biblioteca();
+        //Se establece la vista que tiene el contenido principal
+        $this->data['contenido_principal'] = 'administracion/visitas_biblioteca/index_view';
+        //Se establece la vista que tiene la cabecera
+        $this->data['cabecera'] = 'administracion/visitas_biblioteca/visitas_cabecera';
+        //Se carga la plantilla con las demas variables
+        $this->load->view('plantillas/template', $this->data);
+    }//Fin visitas_biblioteca()
+
+    /**
+     * Bonos
+     */
+    function bonos(){
+        //se establece el titulo de la pagina
+        $this->data['titulo'] = 'Bonos cheques';
+        //Se establece la vista que tiene el contenido principal
+        $this->data['contenido_principal'] = 'administracion/bonos/index_view';
+        //Se establece la vista que tiene la cabecera
+        $this->data['cabecera'] = 'administracion/bonos/bono_cabecera';
+        //Se carga la plantilla con las demas variables
+        $this->load->view('plantillas/template', $this->data);
+    }//Fin bonos
+
+    /**
+     * Códigos y sorteos
+     */
+    function codigos_sorteos(){
+        //se establece el titulo de la pagina
+        $this->data['titulo'] = 'Códigos y sorteos';
+        //Se establece la vista que tiene el contenido principal
+        $this->data['contenido_principal'] = 'administracion/codigos_sorteos_view';
+        //Se establece la vista que tiene la cabecera
+        $this->data['cabecera'] = 'administracion/admin_cabecera';
+        //Se carga la plantilla con las demas variables
+        $this->load->view('plantillas/template', $this->data);
+    }//Fin codigos_sorteos()
+
+    /**
+     * Libros comprados
+     */
+    function compras(){
+        //se establece el titulo de la pagina
+        $this->data['titulo'] = 'Libros comprados';
+        //Se establece la vista que tiene el contenido principal
+        $this->data['contenido_principal'] = 'administracion/compras_view';
+        //Se establece la vista que tiene la cabecera
+        $this->data['cabecera'] = 'administracion/admin_cabecera';
+        //Se carga la plantilla con las demas variables
+        $this->load->view('plantillas/template', $this->data);
+    }//Fin compras()
+
+    /**
      * actualizar_cuadro
      */
     function actualizar_cuadro(){
@@ -48,6 +105,14 @@ Class Administracion extends CI_Controller{
             echo true;
         }
     }// actualizar_cuadro
+
+    /**
+     * cargar_municipios
+     */
+    function cargar_municipios(){
+        //Se carga la vista
+        print json_encode($this->administracion_model->cargar_municipios($this->input->post('id_departamento')));
+    }// cargar_municipios
 
     /**
      * agregar_cuadro
@@ -95,6 +160,24 @@ Class Administracion extends CI_Controller{
     }// guardar_cuadro
 
     /**
+     * guardar_compra
+     */
+    function guardar_compra(){
+        //Se ejecuta el guardado
+        if($this->administracion_model->guardar_compra($this->input->post('datos'))){
+            echo "true";
+        }
+    }// guardar_compra
+
+    /**
+     * listar_bonos
+     */
+    function listar_bonos(){
+        //Se carga la vista
+        $this->load->view('administracion/bonos/tabla_view');
+    } // listar_bonos
+
+    /**
      * listar_cuadros
      */
     function listar_cuadros(){
@@ -126,6 +209,27 @@ Class Administracion extends CI_Controller{
             echo "false";
         } // if
     } // subir_foto
+
+    function quitar_invitador(){
+        // Si se elimina el registro en base de datos
+        if ($this->administracion_model->quitar_invitador($this->input->post('id_usuario')) == 'true') {
+            echo "true";
+        }
+    }// quitar_invitador
+
+    function quitar_cheque(){
+        // Si se elimina el registro en base de datos
+        if ($this->administracion_model->quitar_cheque($this->input->post('id_usuario')) == 'true') {
+            echo "true";
+        }
+    }// quitar_cheque
+
+    function quitar_usuario(){
+        // Si se elimina el registro en base de datos
+        if ($this->administracion_model->quitar_usuario($this->input->post('id_usuario')) == 'true') {
+            echo "true";
+        }
+    }// quitar_usuario
 }
 /* Fin del archivo administracion.php */
 /* Ubicación: ./application/controllers/administracion.php */

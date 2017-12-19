@@ -18,17 +18,31 @@ Class Registro extends CI_Controller{
 		parent::__construct();
 
 		//Carga de modelos y librerías
-		$this->load->model(array('registro_model'));
+		$this->load->model(array('registro_model', 'administracion_model'));
 	}//Fin construct()
 
-	/**
-	 * Interfaz de inicio 
-	 */
+    /**
+     * Interfaz de inicio 
+     */
     function index(){
         //Se establece el título de la página
         $this->data['titulo'] = 'Registro';
         //Se establece la vista que tiene el contenido principal
         $this->data['contenido_principal'] = 'registro/registro_view';
+        //Se establece la vista que tiene la cabecera
+        $this->data['cabecera'] = 'registro/registro_cabecera';
+        //Se carga la plantilla con las demas variables
+        $this->load->view('plantillas/template', $this->data);
+    }//Fin index
+
+	/**
+	 * Interfaz de inicio 
+	 */
+    function index2(){
+        //Se establece el título de la página
+        $this->data['titulo'] = 'Registro';
+        //Se establece la vista que tiene el contenido principal
+        $this->data['contenido_principal'] = 'registro/registro2_view';
         //Se establece la vista que tiene la cabecera
         $this->data['cabecera'] = 'registro/registro_cabecera';
         //Se carga la plantilla con las demas variables
@@ -45,6 +59,17 @@ Class Registro extends CI_Controller{
         //Se carga la plantilla con las demas variables
         $this->load->view('plantillas/template', $this->data);
     }//Fin index
+
+    function compra(){
+        //Se establece el título de la página
+        $this->data['titulo'] = 'Comprar libro';
+        //Se establece la vista que tiene el contenido principal
+        $this->data['contenido_principal'] = 'registro/compra/compra_view';
+        //Se establece la vista que tiene la cabecera
+        $this->data['cabecera'] = 'registro/compra/compra_cabecera';
+        //Se carga la plantilla con las demas variables
+        $this->load->view('plantillas/template', $this->data);
+    }
 
     function registrar_cheque(){
 		//Se establece el título de la página
@@ -79,6 +104,10 @@ Class Registro extends CI_Controller{
         }
     }
 
+    function validar_cedula(){
+        echo $this->registro_model->validar_cedula($this->input->post("cedula"));
+    }// validar_cedula
+
 	function guardar(){
 		//Se valida que la peticion venga mediante ajax y no mediante el navegador
         if($this->input->is_ajax_request()){
@@ -91,7 +120,7 @@ Class Registro extends CI_Controller{
             //Si se guarda correctamente
     		if($this->registro_model->guardar("registro", $datos) == 'true'){
     			//Se retorna el id del usuario creado
-    			echo mysql_insert_id();
+                echo mysql_insert_id();
     		} else {
     			echo 'false';
     		}//Fin if

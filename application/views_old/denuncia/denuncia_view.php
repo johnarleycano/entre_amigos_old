@@ -33,7 +33,8 @@ if(!$id_usuario){ ?>
 			console.log(datos);
 
 			//Se envía correo electrónico con los datos
-            enviar = enviar_email(datos);
+            denuncia = ajax("<?php echo site_url('email/enviar'); ?>", {'datos': datos, 'tipo': 'denuncia'}, 'html');
+            console.log(denuncia);
 
         	mostrar_exito($("#contenedor_denuncia"), "Ha enviado correctamente la denuncia. Recibirá un correo electrónico. Gracias por comunicarse con nosotros.");
 			//denunciar = 

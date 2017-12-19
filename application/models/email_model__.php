@@ -10,7 +10,7 @@ Class Email_model extends CI_Model{
      */
     var $protocolo = 'smtp';
     var $servidor_correo = 'mail.hatovial.com';
-    var $nombre = 'Fundación Entre Amigos de la Fe';
+    var $nombre = 'John Arley Cano Salinas';
 
     function enviar_info($destinatario, $asunto, $cuerpo){
         //Variables del correo

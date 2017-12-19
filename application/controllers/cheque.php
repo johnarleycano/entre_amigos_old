@@ -18,7 +18,7 @@ Class Cheque extends CI_Controller{
 		parent::__construct();
 
 		//Carga de modelos y librerías
-		$this->load->model(array('registro_model'));
+		$this->load->model(array('registro_model', 'usuario_model', 'administracion_model'));
 	}//Fin construct()
 
 	/**
@@ -28,52 +28,62 @@ Class Cheque extends CI_Controller{
 		//Se establece el título de la página
 		$this->data['titulo'] = 'Cheques';
 		//Se establece la vista que tiene el contenido principal
-        $this->data['contenido_principal'] = 'cheques/index_view';
+        $this->data['contenido_principal'] = 'administracion/cheques/index_view';
         //Se establece la vista que tiene la cabecera
-        $this->data['cabecera'] = 'cheques/cheque_cabecera';
+        $this->data['cabecera'] = 'administracion/cheques/cheque_cabecera';
         //Se carga la plantilla con las demas variables
         $this->load->view('plantillas/template', $this->data);
 	}//Fin index
 
-	function listar(){
-		//Se establece el título de la página
-		$this->data['titulo'] = 'Cheques';
-		//Se establece la vista que tiene el contenido principal
+    function listar(){
+        //Se establece el título de la página
+        $this->data['titulo'] = 'Cheques';
+        //Se establece la vista que tiene el contenido principal
         $this->data['contenido_principal'] = 'cheques/listado_view';
         //Se establece la vista que tiene la cabecera
         $this->data['cabecera'] = 'cheques/cheque_cabecera';
         //Se carga la plantilla con las demas variables
         $this->load->view('plantillas/template', $this->data);
-	}//Fin index
+    }//Fin index
 
-    function actualizar(){
+    function actualizar_cheque_usuario(){
         //Se valida que la peticion venga mediante ajax y no mediante el navegador
         if($this->input->is_ajax_request()){
-            // Se reciben los datos por post
-            $datos = $this->input->post('datos');
-            $id_cheque = $this->input->post('id_cheque');
-
-            echo $this->registro_model->actualizar_cheque($id_cheque, $datos);
+            echo $this->registro_model->actualizar_cheque_usuario($this->input->post("id_cheque"), $this->input->post("id_usuario"));
         }else{
             //Si la peticion fue hecha mediante navegador, se redirecciona a la pagina de inicio
             redirect('');
         }
     }
 
-	function guardar(){
-		//Se valida que la peticion venga mediante ajax y no mediante el navegador
+    function cargar_interfaz(){
+        //Se valida que la peticion venga mediante ajax y no mediante el navegador
+        if($this->input->is_ajax_request()){
+            //Se consultan los usuarios según el tipo
+            $this->data['tipo'] = $this->input->post("tipo");
+            
+            //Se carga la interfaz
+            $this->load->view('administracion/cheques/tabla_view', $this->data);
+        }else{
+            //Si la peticion fue hecha mediante navegador, se redirecciona a la pagina de inicio
+            redirect('');
+        }
+    }// cargar_interfaz
+
+    function guardar(){
+        //Se valida que la peticion venga mediante ajax y no mediante el navegador
         if($this->input->is_ajax_request()){
             // Se reciben los datos por post
             $datos = $this->input->post('datos');
             
             //Si se guarda correctamente
-    		if($this->registro_model->guardar("cheque", $datos) == 'true'){
-    			//Se retorna el id del usuario creado
-    			echo mysql_insert_id();
-    		} else {
-    			echo 'false';
-    		}//Fin if
-    	}else{
+            if($this->registro_model->guardar("cheque", $datos) == 'true'){
+                //Se retorna el id del usuario creado
+                echo mysql_insert_id();
+            } else {
+                echo 'false';
+            }//Fin if
+        }else{
             //Si la peticion fue hecha mediante navegador, se redirecciona a la pagina de inicio
             redirect('');
         }
@@ -82,13 +92,8 @@ Class Cheque extends CI_Controller{
     function validar(){
         //Se valida que la peticion venga mediante ajax y no mediante el navegador
         if($this->input->is_ajax_request()){
-            //Datos en POST
-            $cheque1 = $this->input->post('cheque1');
-            $cheque2 = $this->input->post('cheque2');
-            $cheque3 = $this->input->post('cheque3');
-
-            // Se consulta en el modelo que exista el cheque
-            $validar = $this->registro_model->validar_cheque($cheque1, $cheque2, $cheque3);
+            // Consulta
+            $validar = $this->registro_model->validar_cheque($this->input->post('datos'));
 
             // Si existe
             if($validar){

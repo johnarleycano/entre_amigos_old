@@ -1,53 +1,48 @@
-<div class="well row">
-    <div id="mensajes"></div>
-	<div class="col-lg-4">
-        <label for="input_cheque1" class="control-label">Cheque biblioteca privada *</label>
-        <input type="text" class="form-control" id="input_cheque1" placeholder="Escriba el número del cheque" autofocus>
-    </div>
+<?php $usuario = $this->usuario_model->listar("", $this->session->userdata("Pk_Id_Usuario")); ?>
 
-    <div class="col-lg-4">
-        <label for="input_cheque2" class="control-label">Cheque libro de poesía *</label>
-        <input type="text" class="form-control" id="input_cheque2" placeholder="Escriba el número del cheque">
-    </div>
-
-    <div class="col-lg-4">
-        <label for="input_cheque3" class="control-label">Sorteo por un año *</label>
-        <input type="text" class="form-control" id="input_cheque3" placeholder="Escriba el número del cheque">
-    </div>
+<div class="well">
+    <center>
+        <h1><?php echo $usuario->Cheque; ?></h1>
+    </center>
 </div>
-<button type="button" id="guardar_cheque" class="btn btn-success btn-block">Guardar</button><br>
+
+<div class="row">
+    <div id="mensajes"></div>
+    
+    <div class="col-lg-4"></div>
+    
+    <div class="col-lg-4">
+        <center><label for="consignacion" class="control-label">Número de consignación</label></center>
+        <input class="form-control" id="consignacion" type="text" value="<?php echo $usuario->Consignacion; ?>" placeholder="Digite el número de consignación" autofocus>
+        <p></p>
+        <button type="button" id="guardar_cheque" class="btn btn-success btn-block">Guardar</button>
+    </div>
+</div>   
 
 <script type="text/javascript">
     $(document).ready(function(){
 
     	$("#guardar_cheque").on("click", function(){
     		//Declaración de variables
-            var cheque1 = $("#input_cheque1");  
-            var cheque2 = $("#input_cheque2");  
-            var cheque3 = $("#input_cheque3");  
+            var consignacion = $("#consignacion");  
 
             //Campos obligatorios a validar
             var campos_vacios = new Array(
-                cheque1.val(), 
-                cheque2.val(),
-                cheque3.val()
+                consignacion.val()
             );
+            // console.log(campos_vacios);
+            
+            datos = {
+                "Consignacion": consignacion.val()
+            }
 
             // si no supera la validación
             if (!validar_campos_vacios(campos_vacios)) {
                 //Se muestra el error
-                mostrar_error($("#mensajes"), "Por favor diligencie todos los campos marcados con *");
+                mostrar_error($("#mensajes"), "Por favor ingrese el número de consignación");
             }else{
-            	//Datos a guardar
-                datos = {
-                    'Cheque1': cheque1.val(),
-                    'Cheque2': cheque2.val(),
-                    'Cheque3': cheque3.val()
-                }; // datos
-                // console.log(datos);
-
-            	// Guardamos
-            	cheque = ajax("<?php echo site_url('cheque/guardar'); ?>", {'datos': datos}, 'html');
+            	// Actualizar
+            	cheque = ajax("<?php echo site_url('cheque/actualizar'); ?>", {'datos': datos}, 'html');
 
             	//Se muestra el mensaje de exito
                 mostrar_exito($("#mensajes"), "Se ha guardado correctamente el cheque.");

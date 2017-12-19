@@ -17,7 +17,7 @@
 			<article>
 				<p>{CUERPO}</p>
 			</article>
-			<p>Atentamente:<br> El equipo de Código System Three.</p>
+			<p>Atentamente:<br> El equipo de Entre Amigos System Three.</p>
 		</section>
 		<font size="-1" color="#cccccc">Este correo y cualquier archivo anexo son confidenciales y para uso exclusivo de la persona o entidad de destino. Esta comunicación puede contener información protegida por el privilegio de cliente - abogado. Si usted ha recibido este correo por error, equivocación u omisión queda estrictamente prohibido la utilización, copia, reimpresión, reenvío o cualquier acción tomada sobre este correo y puede ser penalizada legalmente. En tal caso, favor notificar en forma inmediata al remitente.</font>
 	</body>

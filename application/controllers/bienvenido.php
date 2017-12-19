@@ -43,6 +43,17 @@ Class Bienvenido extends CI_Controller{
         $this->load->view('plantillas/template', $this->data);
 	}
 
+	function proteccion(){
+		//Se establece el título de la página
+		$this->data['titulo'] = 'Aviso legal';
+		//Se establece la vista que tiene el contenido principal
+        $this->data['contenido_principal'] = 'bienvenido/proteccion/index_view';
+        //Se establece la vista que tiene la cabecera
+        $this->data['cabecera'] = 'bienvenido/proteccion/proteccion_cabecera';
+        //Se carga la plantilla con las demas variables
+        $this->load->view('plantillas/template', $this->data);
+	}
+
 	function presentacion(){
 		//Se establece el título de la página
 		$this->data['titulo'] = '¿Quiénes somos?';
