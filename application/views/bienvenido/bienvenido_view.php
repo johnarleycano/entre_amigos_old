@@ -415,7 +415,7 @@
 			            				<li>Si usted desea participar en éste programa, inscribiéndose desde cualquier lugar donde se encuentre, lo debe de hacer por la página web <b><i><a href="http://entreamigosdecolombia.org/index.php/registro" target="_blank">http://entreamigosdecolombia.org/afiliarse</a></i></b></li>
 			            				<li>Tenga a la mano el número de consignación y la empresa por la cual la realizó, coloque sus datos personales y lo requerido por las casillas; transcurridos de 24 horas, daremos la autorización de su afiliación vía correo. En caso tal de un inconveniente el programa lo deja entrar hasta un panel interno, el cual le dará el código de afiliación y la clave; por allí encontrará un correo que nos podrá enviar cualquier inquietud que tenga para que no se vaya a perder su afiliación.</li>
 			            				<li>Tendrá la biblioteca privada virtual.</li>
-			            				<li>Participará en los sorteos, día a día, mes a mes, año tras año; hasta que la fundación exista.</li>
+			            				<li>Participará en los sorteos, día a día, mes ames, año tras año; hasta que la fundación exista.</li>
 			            				<li>No tendrá que pagar mensualidades.</li>
 			            				<li>Pondremos un libro (cuento) cada mes por un año.</li>
 			            			</ul>
@@ -435,46 +435,6 @@
 	</div>
 </p>
 
-<div class="col-lg-3">
-		<div class="well">
-			<h3>Préstamos</h3>
-			<a onClick="javascript:prestamos()" class="btn btn-primary btn-lg">Ver más &raquo;</a>
-
-			<!-- Modal Misión -->
-			<div id="modal_prestamos" class="modal fade" >
-			    <!-- modal-content -->
-			    <div class="modal-dialog">
-			        <div class="modal-content">
-			            <div class="modal-header">
-			                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-			                <h4 id="titulo_mensaje" class="modal-title"><center><b>Préstamos</b></center></h4>
-			            </div>
-			            <div class="modal-body">
-			            	<div class="row">
-			            		<div class="form-group col-lg-12">
-			            			<p>Todo lo que tiene que ver con préstamos, está referido con la sección patrocinados; estos préstamos están incluidos dentro de la propuesta que lleva el volante de invitación.</p>
-			          				<p>El que use el préstamo como medio de aceptación, deberá aportar inicialmente $24.000 pesos y tomará el préstamo de $60.000 el cual pagará con el sistema ATH CULTURAL que son $1.000 pesos diarios ahorrados en casa durante 60 días.</p>
-			          				<p>Esto quiere decir, que el costo de afiliación es de $84.000 mil pesos colombianos una sola vez en la vida y se toman como una donación.</p>
-			          				<p>La forma de aportar es la siguiente:</p>
-			          					<ul>
-			          						<li>Entre a <b><i><a href="http://entreamigosdecolombia.org/index.php" target="_blank">http://entreamigosdecolombia.org</a></i></b> busque el botón de donación, y seleccione el aporte de $24.000 pesos, el programa le dará el código de pago.  </li>
-			            					<li>Diríjase a un punto de pago de baloto en cualquier parte del País, y 			realice su aporte.</li>
-			            					<li>Cuando vaya a cancelar, realice el mismo ejercicio, buscando la sección 		cancelación, cancelando los 60.000 pesos y en ese mismo momento iniciara la 	participación de los sorteos, hasta que la fundación exista.</li>
-			            				</ul>
-			            			<p>Le será enviado el código de empleo en 48 horas, así podrá invitar a un 			amigo cuando lo desee.</p>
-			            				
-				            	</div>
-			            	</div>
-			            </div>
-
-			            <div class="modal-footer">
-			                <button type="button" class="btn btn-info" data-dismiss="modal">Cerrar</button>
-			            </div>
-			        </div><!-- /.modal-content -->
-			    </div><!-- /.modal-dialog -->
-			</div><!-- /.modal -->
-		</div>
-	</div>
 <script type="text/javascript">
 	function mision(){
 		// Se abre la ventana
@@ -489,11 +449,6 @@
 	function como_afiliarse(){
 		// Se abre la ventana
     	$('#modal_aliliaciones').modal('show');
-	}
-
-	function prestamos(){
-		// Se abre la ventana
-    	$('#modal_prestamos').modal('show');
 	}
 
 	function moneda(){
