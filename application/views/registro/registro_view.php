@@ -264,29 +264,20 @@
                     </div>
 
                     <div class="col-lg-3">
-                        <label for="cupo5" class="control-label">Número cupo *</label>
-                        <input type="text" class="form-control" id="cupo5" >
-                    </div>
-
-                    <div class="col-lg-3">
                         <label for="biblioteca5" class="control-label">Número biblioteca *</label>
                         <input type="text" class="form-control" id="biblioteca5" >
                     </div>
 
-                    <div class="col-lg-3">
-                        <label for="afiliado5" class="control-label">Número afiliado *</label>
-                        <input type="text" class="form-control" id="afiliado5" >
-                    </div>
                     <div class="clear"></div>
 
                     <div class="col-lg-3">
                         <label for="consignacion5" class="control-label">Número consignación *</label>
-                        <input type="text" class="form-control" id="consignacion5" placeholder="Por la que consignó">
+                        <input type="text" class="form-control" id="consignacion5" >
                     </div>
 
                     <div class="col-lg-3">
                         <label for="empresa5" class="control-label">Empresa *</label>
-                        <input type="text" class="form-control" id="empresa5" >
+                        <input type="text" class="form-control" id="empresa5" placeholder="Por la que consignó">
                     </div>
 
                     <div class="col-lg-3">
@@ -301,7 +292,7 @@
                     <div class="clear"></div>
 
                     <div class="col-lg-3">
-                        <label for="telefono5" class="control-label">Teléfono asesor *</label>
+                        <label for="telefono5" class="control-label">Teléfono asesor </label>
                         <input type="text" class="form-control" id="telefono5" >
                     </div>
 
@@ -683,14 +674,11 @@
                     //Campos obligatorios a validar
                     var campos_pago_vacios = new Array(
                         patrocinio5.val(),
-                        cupo5.val(),
                         biblioteca5.val(),
-                        afiliado5.val(),
                         consignacion5.val(),
                         empresa5.val(),
                         asesor5.val(),
                         cedula5.val(),
-                        telefono5.val(),
                         celular5.val()
                     );
 
@@ -710,12 +698,10 @@
                     datos["Tipo_Afiliacion"] = 5;
                     datos["Numero_Patrocinio"] = patrocinio5.val();
                     datos["Numero_Biblioteca"] = biblioteca5.val();
-                    datos["Numero_Afiliado"] = afiliado5.val();
                     datos["Consignacion"] = consignacion5.val();
                     datos["Empresa"] = empresa5.val();
                     datos["Nombre_Asesor"] = asesor5.val();
                     datos["Cedula_Asesor"] = cedula5.val();
-                    datos["Telefono_Asesor"] = telefono5.val();
                     datos["Celular_Asesor"] = celular5.val();
                 break;
 

@@ -93,7 +93,7 @@
 
     <div class="col-lg-6">
         <label for="input_empresa" class="control-label">Empresa por la que consignó</label>
-        <input type="text" class="form-control" id="input_empresa" placeholder="Escriba la emprea por la que consignó">
+        <input type="text" class="form-control" id="input_empresa" placeholder="Escriba la empresa por la que consignó">
     </div>
 </div>
 
