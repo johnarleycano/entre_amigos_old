@@ -268,8 +268,6 @@
                         <input type="text" class="form-control" id="biblioteca5" >
                     </div>
 
-                    <div class="clear"></div>
-
                     <div class="col-lg-3">
                         <label for="consignacion5" class="control-label">Número consignación *</label>
                         <input type="text" class="form-control" id="consignacion5" >
@@ -280,6 +278,8 @@
                         <input type="text" class="form-control" id="empresa5" placeholder="Por la que consignó">
                     </div>
 
+                    <div class="clear"></div>
+
                     <div class="col-lg-3">
                         <label for="asesor5" class="control-label">Nombre asesor *</label>
                         <input type="text" class="form-control" id="asesor5" >
@@ -289,8 +289,7 @@
                         <label for="cedula5" class="control-label">Cedula asesor *</label>
                         <input type="text" class="form-control" id="cedula5" >
                     </div>
-                    <div class="clear"></div>
-
+                    
                     <div class="col-lg-3">
                         <label for="telefono5" class="control-label">Teléfono asesor </label>
                         <input type="text" class="form-control" id="telefono5" >
@@ -300,6 +299,7 @@
                         <label for="celular5" class="control-label">Celular asesor *</label>
                         <input type="text" class="form-control" id="celular5" >
                     </div>
+                    <div class="clear"></div>
                 </div>
             </p>
 
