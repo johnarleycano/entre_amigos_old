@@ -435,7 +435,7 @@
 	</div>
 </p>
 
--<div class="col-lg-3">
+<div class="col-lg-3">
 		<div class="well">
 			<h3>Préstamos</h3>
 			<a onClick="javascript:prestamos()" class="btn btn-primary btn-lg">Ver más &raquo;</a>
