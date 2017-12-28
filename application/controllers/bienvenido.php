@@ -64,6 +64,14 @@ Class Bienvenido extends CI_Controller{
         //Se carga la plantilla con las demas variables
         $this->load->view('plantillas/template', $this->data);
 	}
+
+	function sorteos(){
+		$this->data['titulo'] = '¿Quiénes somos?';
+		$this->load->view('bienvenido/sorteos_view', $this->data);
+		
+	}
 }
+
+
 /* Fin del archivo bienvenido.php */
 /* Ubicación: ./application/controllers/bienvenido.php */

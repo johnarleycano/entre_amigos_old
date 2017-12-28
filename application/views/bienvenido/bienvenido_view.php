@@ -5,11 +5,42 @@
 		</p>
 	</div>
 
+	<div class="col-lg-6">
+		<div class="well">
+			<h3>Sorteos</h3>
+			<a onClick="javascript:sorteos1()" class="btn btn-primary btn-lg">Ver más &raquo;</a>
+
+			<!-- Modal Sorteos -->
+			<div id="modal_sorteos1" class="modal fade" >
+			    <!-- modal-content -->
+			    <div class="modal-dialog">
+			        <div class="modal-content">
+			            <div class="modal-header">
+			                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			                <h4 id="titulo_mensaje" class="modal-title"><center><b>Sorteos</b></center></h4>
+			            </div>
+			            <div class="modal-body">
+			            	<div class="row">
+			            		<div class="form-group col-lg-12">
+			            			<p>SORTEOS 123</p>
+			            			<div id="cont_sorteos"></div>
+				            	</div>
+			            	</div>
+			            </div>
+
+			            <div class="modal-footer">
+			                <button type="button" class="btn btn-info" data-dismiss="modal">Cerrar</button>
+			            </div>
+			        </div><!-- /.modal-content -->
+			    </div><!-- /.modal-dialog -->
+			</div><!-- /.modal -->
+		</div>
+	</div>
+
 	<div class="col-lg-3">
 		<div class="well">
 			<h3>Nuestra misión</h3>
 			<a onClick="javascript:mision()" class="btn btn-primary btn-lg">Ver más &raquo;</a>
-
 			<!-- Modal Misión -->
 			<div id="modal_mision" class="modal fade" >
 			    <!-- modal-content -->
@@ -104,7 +135,7 @@
 			</div><!-- /.modal -->
 		</div>
 	</div>
-	<div class="clear"></div>
+	
 
 	<div class="col-lg-3">
 		<div class="well">
@@ -218,6 +249,7 @@
 			</div><!-- /.modal -->
 		</div>
 	</div>
+	<div class="clear"></div>
 
 	<div class="col-lg-3">
 		<div class="well">
@@ -393,6 +425,7 @@
 			</div><!-- /.modal -->
 		</div>
 	</div>
+	<div class="clear"></div>
 
 	<div class="col-lg-3">
 		<div class="well">
@@ -475,8 +508,16 @@
 			</div><!-- /.modal -->
 		</div>
 	</div>
+	<div class="clear"></div>
 
 <script type="text/javascript">
+
+	function sorteos1(){
+		// Se abre la ventana
+		$('#cont_sorteos').load('<?php echo site_url("bienvenido/sorteos");  ?>');
+    	$('#modal_sorteos1').modal('show');
+	}
+
 	function mision(){
 		// Se abre la ventana
     	$('#modal_mision').modal('show');
