@@ -508,7 +508,47 @@
 			</div><!-- /.modal -->
 		</div>
 	</div>
-	<div class="clear"></div>
+
+<div class="col-lg-3">
+		<div class="well">
+			<h3>System Three</h3>
+			<a onClick="javascript:system_three()" class="btn btn-primary btn-lg">Ver más &raquo;</a>
+
+			<!-- Modal System three -->
+			<div id="modal_system_three" class="modal fade" >
+			    <!-- modal-contejnt -->
+			    <div class="modal-dialog">
+			        <div class="modal-content">
+			            <div class="modal-header">
+			                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			                <h4 id="titulo_mensaje" class="modal-title"><center><b>System Three</b></center></h4>
+			            </div>
+			            <div class="modal-body">
+			            	<div class="row">
+			            		<div class="form-group col-lg-12">
+			            			<ul>
+			            			<p><b>SYSTEMTHREE, ES UN PROGRAMA DE TRES CONTACTOS.</b></p>
+			            				<li>EJ: Cuando un titular invita a dos amigos al programa ya es un systemthree.</li>
+			            				<li>Esta persona tendrá un sorteo adicional  a los sorteos diarios que tiene todo afiliado.</li>
+			            				<li>También puede participar en el programa, la persona que entre como afiliado, sin usar el préstamo, pagando el 100% del aporte total o sea 84.000 una sola vez en la vida para la fundación es muy importante su ayuda, además, es conveniente que no se quede por fuera de este sorteo.</li>
+			            				<li>El sorteo será de 70.000.000 setenta millones de pesos diarios, hasta que la fundación exista.</li>
+			            				<li>El asesor voluntario ganara $5'000.000 cinco millones de pesos, por haber invitado al afiliado.</li>
+			            				<li> El sorteo se hará así:<ul></ul>
+			            				Todos los días la fundación hará un sorteo de cuatro cifras sin serie, al caer el número, la fundación convocará a los afiliados y será sorteado entre uno de los afiliados , libres de impuestos. ¡podría ser usted!.   </li>
+			            			</ul>
+				            	</div>
+			            	</div>
+			            </div>
+
+			            <div class="modal-footer">
+			                <button type="button" class="btn btn-info" data-dismiss="modal">Cerrar</button>
+			            </div>
+			        </div><!-- /.modal-content -->
+			    </div><!-- /.modal-dialog -->
+			</div><!-- /.modal -->
+		</div>
+	</div>
+</p>
 
 <script type="text/javascript">
 
@@ -536,6 +576,11 @@
 	function prestamos(){
 		// Se abre la ventana
     	$('#modal_prestamos').modal('show');
+	}
+
+	function system_three(){
+		// Se abre la ventana
+    	$('#modal_system_three').modal('show');
 	}
 
 	function moneda(){
