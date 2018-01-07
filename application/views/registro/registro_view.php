@@ -68,6 +68,19 @@
                     <label for="input_password2" class="control-label">Repita su contraseña *</label><br>
                     <input type="password" class="form-control" id="input_password2" placeholder="Repita su contraseña">
                 </div>
+            
+                <div class="col-lg-5"><br>
+                    <input type="checkbox" name="prestamo">
+                    <font size="5"><label>Marcar sólo si hizo el préstamo</label></font>  
+                </div>
+
+                <form>
+                    <div class="col-lg-6"><br>
+                        <label for="fecha_prestamo">Fecha de préstamo:</label>
+                        <input type="date" id="fecha_prestamo" name="fecha_prestamo">
+                    </div>
+                </form>
+
             </div>
         </p>
 
