@@ -129,6 +129,19 @@ Class Registro extends CI_Controller{
             redirect('');
         }
     }//Fin 
+
+    function guardar_sorteos(){
+        //Se valida que la peticion venga mediante ajax y no mediante el navegador
+        if($this->input->is_ajax_request()){
+            // Se borran los anteriores registros
+            $this->registro_model->eliminar_sorteos();
+            
+            echo $this->registro_model->guardar("sorteos", $this->input->post('datos'));
+        }else{
+            //Si la peticion fue hecha mediante navegador, se redirecciona a la pagina de inicio
+            redirect('');
+        }
+    }
 }
 /* Fin del archivo registro.php */
 /* Ubicación: ./application/controllers/registro.php */

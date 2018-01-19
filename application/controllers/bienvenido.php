@@ -16,6 +16,8 @@ Class Bienvenido extends CI_Controller{
 	 */
 	function __construct() {
 		parent::__construct();
+
+		$this->load->model("registro_model");
 	}//Fin construct()
 
 	/**

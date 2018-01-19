@@ -22,7 +22,6 @@
 			            <div class="modal-body">
 			            	<div class="row">
 			            		<div class="form-group col-lg-12">
-			            			<p>SORTEOS 123</p>
 			            			<div id="cont_sorteos"></div>
 				            	</div>
 			            	</div>

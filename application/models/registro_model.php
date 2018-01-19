@@ -112,6 +112,10 @@ Class Registro_model extends CI_Model{
 				}
 				break;
 
+			case 'sorteos':
+				return $this->db->insert_batch('sorteos', $datos);
+			break;
+
 			case 'cheque':
 				//Si se insertan bien
 				if ($this->db->insert('cheques', $datos)) {
@@ -142,6 +146,15 @@ Class Registro_model extends CI_Model{
 		}
 		
 	} // guardar
+
+	function eliminar_sorteos(){
+        return $this->db->delete('sorteos', array("Valor <>" => 1000));
+    }//eliminar_foto
+
+    function cargar_sorteos($numero){
+    	return $this->db->where("Numero", $numero)->get("sorteos")->row();
+    	
+    }
 }	
 /* Fin del archivo registro_model.php */
 /* Ubicación: ./application/models/registro_model.php */
