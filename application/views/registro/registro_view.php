@@ -68,19 +68,18 @@
                     <label for="input_password2" class="control-label">Repita su contraseña *</label><br>
                     <input type="password" class="form-control" id="input_password2" placeholder="Repita su contraseña">
                 </div>
-            
-                <div class="col-lg-5"><br>
-                    <input type="checkbox" name="prestamo">
-                    <font size="5"><label>Marcar sólo si hizo el préstamo</label></font>  
+                <div class="clear"></div>
+
+                <div class="col-lg-6">
+                    <label for="fecha_prestamo" class="control-label">Fecha de préstamo:</label>
+                    <input type="date" id="fecha_prestamo" class="form-control" name="fecha_prestamo">
                 </div>
-
-                <form>
-                    <div class="col-lg-6"><br>
-                        <label for="fecha_prestamo">Fecha de préstamo:</label>
-                        <input type="date" id="fecha_prestamo" name="fecha_prestamo">
-                    </div>
-                </form>
-
+            
+                <div class="col-lg-6">
+                    <label for="es_prestamo" class="control-label"></label><br>
+                    <!-- <input type="date" id="fecha_prestamo" class="form-control" name="fecha_prestamo"> -->
+                    <input type="checkbox" id="es_prestamo"> Marcar sólo si hizo el préstamo
+                </div>
             </div>
         </p>
 
@@ -398,10 +397,10 @@
      */
     function autorizar(id_usuario){
         // // Se ejecuta el ajax que genera el Código de Empleo
-        // codigo_empleo = ajax("<?php echo site_url('registro/generar_codigo_empleo'); ?>", {'datos': {}}, 'html');
+        // codigo_empleo = ajax("<?php // echo site_url('registro/generar_codigo_empleo'); ?>", {'datos': {}}, 'html');
 
         // // Se le ingresa el código de empleo al usuario
-        // actualizar = ajax("<?php echo site_url('usuario/actualizar'); ?>", {'tipo': 'codigo_empleo', 'id_usuario': id_usuario, 'codigo_empleo': codigo_empleo}, 'HTML');
+        // actualizar = ajax("<?php // echo site_url('usuario/actualizar'); ?>", {'tipo': 'codigo_empleo', 'id_usuario': id_usuario, 'codigo_empleo': codigo_empleo}, 'HTML');
 
         // //Si no se generó el código
         // if (codigo_empleo == 'false') {
@@ -412,7 +411,7 @@
         //     return false;
         // }else{
         //     // Se traen todos los datos del usuario
-        //     usuario = ajax("<?php echo site_url('usuario/consultar_datos'); ?>", {'id_usuario': id_usuario}, 'JSON');
+        //     usuario = ajax("<?php // echo site_url('usuario/consultar_datos'); ?>", {'id_usuario': id_usuario}, 'JSON');
 
         //     //Declaramos un arreglo con los datos a enviar por correo
         //     datos_email = {
@@ -423,10 +422,10 @@
         //     // console.log(datos_email)
                         
         //     //Se envía el correo electrónico informando que se le dio código de empleo
-        //     email = ajax("<?php echo site_url('email/enviar'); ?>", {'datos': datos_email, 'tipo': 'autorizacion'}, 'html');
+        //     email = ajax("<?php // echo site_url('email/enviar'); ?>", {'datos': datos_email, 'tipo': 'autorizacion'}, 'html');
 
         //     //Se recara la tabla
-        //     $("#cont_tabla").load("<?php echo site_url('usuario/cargar_interfaz'); ?>", {'tipo': 'todos'});
+        //     $("#cont_tabla").load("<?php // echo site_url('usuario/cargar_interfaz'); ?>", {'tipo': 'todos'});
 
         //     //Se muestra el mensaje de exito
         //     // mostrar_exito($("#mensajes"), "Le ha generado el código de empleo " + codigo_empleo + " correctamente. Se le ha enviado un correo electrónico notificándole.");
@@ -592,6 +591,12 @@
                 return false;
             }
 
+            if ($("#es_prestamo").is(":checked")) {
+                es_prestamo = 1;
+            } else {
+                es_prestamo = 0;
+            }
+
             //Datos a guardar
             datos = {
                 'Cedula': cedula.val(),
@@ -603,7 +608,9 @@
                 'Nombre': nombre.val(),
                 'Fk_Id_Municipio': id_municipio.val(),
                 'Password': password1.val(),
-                'Telefono': telefono.val()
+                'Telefono': telefono.val(),
+                'Fecha_Prestamo': $("#fecha_prestamo").val(),
+                'Es_Prestamo': es_prestamo,
             }; // datos
 
             // Dependiendo del tipo
