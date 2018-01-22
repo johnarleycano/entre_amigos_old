@@ -66,6 +66,8 @@
 		<?php if($id_usuario){ ?>
 			<!-- Mis invitaciones -->
 			<li><a href="<?php echo site_url('usuario/invitador'); ?>"><span class="glyphicon glyphicon-user"></span> Mi invitador</a></li>
+			
+			<li><a href="<?php echo site_url('usuario/patrocinador'); ?>"><span class="glyphicon glyphicon-briefcase"></span> Mi patrocinador</a></li>
 
 			<!-- Si no tiene código de empleo, menú para pedir cheque -->
 			<?php if($this->session->userdata('Codigo_Empleo') == 'Pendiente'){ ?>

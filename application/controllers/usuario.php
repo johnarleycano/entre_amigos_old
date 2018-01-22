@@ -43,6 +43,17 @@ Class Usuario extends CI_Controller{
         $this->load->view('plantillas/template', $this->data);
 	}
 
+	function patrocinador(){
+		//Se establece el título de la página
+		$this->data['titulo'] = 'Mi patrocinador';
+		//Se establece la vista que tiene el contenido principal
+        $this->data['contenido_principal'] = 'usuario/patrocinador/index_view';
+        //Se establece la vista que tiene la cabecera
+        $this->data['cabecera'] = 'usuario/patrocinador/patrocinador_cabecera';
+        //Se carga la plantilla con las demas variables
+        $this->load->view('plantillas/template', $this->data);
+	}
+
 	function referidos(){
 		//Se establece el título de la página
 		$this->data['titulo'] = 'Referidos';
@@ -169,6 +180,7 @@ Class Usuario extends CI_Controller{
 				$sesion = array(
 	 				"Pk_Id_Usuario" => $validacion->Pk_Id_Usuario,
 	 				"Codigo_Afiliacion" => $validacion->Codigo_Afiliacion,
+	 				"Patrocinador" => $validacion->Nombre_Empresa,
 	 				"Codigo_Empleo" => $validacion->Codigo_Empleo,
 	 				"Nombre" => $validacion->Nombre,
 	 				"Fk_Id_Usuario_Invitador" => $validacion->Fk_Id_Usuario_Invitador,
