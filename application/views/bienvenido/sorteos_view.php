@@ -1,3 +1,17 @@
+<div class="well row">
+	<?php $sorteo = $this->registro_model->cargar_sorteos(1); ?>
+	<div class="col-lg-6">
+	    <label for="input_loteria" class="control-label">Lotería *</label>
+	    <input type="text" class="form-control" id="input_loteria" value="<?php echo (isset($sorteo->Loteria)) ? $sorteo->Loteria : "" ; ?>">
+	</div>
+
+	<div class="col-lg-6">
+	    <label for="input_fecha" class="control-label">Fecha *</label>
+	    <input type="date" class="form-control" id="input_fecha" value="<?php echo (isset($sorteo->Fecha)) ? $sorteo->Fecha : "" ; ?>">
+	</div>
+</div>
+
+
 <!-- Se recorre creando las 50 casillas -->
 <?php
 for ($i = 1; $i <= 50; $i++) {
@@ -33,6 +47,8 @@ for ($i = 1; $i <= 50; $i++) {
 				registro = {
 					Numero: $("#sorteo" + i).attr("name"),
 					Valor: $("#sorteo" + i).val(),
+					Loteria: $("#input_loteria").val(),
+					Fecha: $("#input_fecha").val(),
 				}
 
 				// El registro se agrega al arreglo de datos
